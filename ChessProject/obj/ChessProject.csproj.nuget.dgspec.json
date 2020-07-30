@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj": {}
+    "C:\\Users\\Dalila\\Source\\Repos\\Moravia\\ChessProject\\ChessProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj": {
+    "C:\\Users\\Dalila\\Source\\Repos\\Moravia\\ChessProject\\ChessProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
+        "projectUniqueName": "C:\\Users\\Dalila\\Source\\Repos\\Moravia\\ChessProject\\ChessProject.csproj",
         "projectName": "ChessProject",
-        "projectPath": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
+        "projectPath": "C:\\Users\\Dalila\\Source\\Repos\\Moravia\\ChessProject\\ChessProject.csproj",
         "packagesPath": "C:\\Users\\Dalila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\obj\\",
+        "outputPath": "C:\\Users\\Dalila\\Source\\Repos\\Moravia\\ChessProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

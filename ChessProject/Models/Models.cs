@@ -16,7 +16,7 @@ namespace ChessProject.Models
         public DbSet<Piece> Piece { get; set; }
         public DbSet<Square> Square { get; set; }
         public DbSet<Board> Board { get; set; }
-        public DbSet<Game> Game { get; set; }
+        public DbSet<Chess> Game { get; set; }
     }
 
 

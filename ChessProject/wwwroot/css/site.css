@@ -71,34 +71,31 @@ body {
 }
 
 /******** CHESS **********/
-body {
-    background: #fff;
-}
-
 .square {
-    width: 37px;
-    height: 37px;
-    text-align: center;
-    line-height: 1.8em;
     font-size: 15pt;
-    float: left;
     color: #e1f5d0;
 }
 
-.square:nth-child(2n+0) {
-    background: #bbeeb7; /* #5daa56; */
+.squareDark {
+    background: #bbeeb7;
     color: #bbeeb7;
 }
 
-
 .board {
-    width: 296px;
-    height: 296px;
-    margin: 1em;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
     box-shadow: 0px 0px 0.3em #ccc;
     background: #d9ffb3;
     overflow: hidden;
-    border: 1px solid #808080;
-    /*margin: auto;*/
+    border: 1px outset #bfff80;
 }
 
+.table td, .table th {
+    text-align: center;
+}
+
+.formChess {
+    width: 30%;
+}

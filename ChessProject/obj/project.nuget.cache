@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IALH0iEyseIf5UXvVSkIPn6HCE+phjOXb6Sf7Y9P9pfb6CsJWT7GCYSThs/XLyIsZZei5amRbEMaLLk3MsZbGQ==",
+  "dgSpecHash": "vUqkiSjXui1Ulk8KY51OZLOE3Co5pK8m40WVZMO3w4qte0lp1rmreRl6UxgduQll+LDPibUfzG11D+n5piVK6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
+  "projectFilePath": "C:\\Users\\Dalila\\Source\\Repos\\Moravia\\ChessProject\\ChessProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dalila\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Dalila\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

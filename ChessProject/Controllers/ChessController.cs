@@ -11,29 +11,26 @@ namespace ChessProject.Controllers
 {
     public class ChessController : Controller
     {
-        private const int nroSquare = 64;
-        private const int nroPiece = 32;
-        private const int nroColumn = 8;
-        private string[] Row = { "a", "b", "c", "d", "e", "f", "h" };
-        private string colorSquareD = "dark";
-        private string colorSquareL = "light";
-        private string colorSquare = "dark";
-        private string colorB = "Black";
-        private string colorW = "White";
-
         public IActionResult Index()
         {
             Initialize();
             RandomPiece();
             return View();
         }
+
+        public ActionResult NewGame() {
+            return View(); //FALTA
+        }
         private void Initialize()
         {
-            Game game = new Game{
-                
-            };
-            
+            Board newBoard = new BoardsController().Initialize();
 
+            Chess newChess = new Chess
+            {
+                Name = "game" + DateTime.Now,
+                BeginPlay = DateTime.Now,
+                Board = newBoard,
+            };
         }
         private void RandomPiece()
         {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ChessProject.Models
 {
-    public class Game
+    public class Chess
     {
         public int Id { get; set; }
         public string Name { get; set; }
