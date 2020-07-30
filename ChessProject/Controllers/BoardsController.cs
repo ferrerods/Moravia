@@ -30,7 +30,6 @@ namespace ChessProject.Controllers
 
         public Board Initialize()
         {
-
             try {
 
                 Board newBoard = new Board();
@@ -241,7 +240,8 @@ namespace ChessProject.Controllers
 
                 return newBoard;
             }
-            catch (Exception ex) {  }
+            catch (Exception ex) { return null; }
+
         }
 
     }
