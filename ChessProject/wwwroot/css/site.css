@@ -73,12 +73,12 @@ body {
 /******** CHESS **********/
 .square {
     font-size: 15pt;
-    color: #e1f5d0;
+    color: #b3ffff; /*#ccffff;*/
 }
 
 .squareDark {
-    background: #bbeeb7;
-    color: #bbeeb7;
+    background: #3399ff;
+    color: #3399ff;
 }
 
 .board {
@@ -86,14 +86,34 @@ body {
     height: 50%;
     margin-left: 25%;
     margin-right: 25%;
-    box-shadow: 0px 0px 0.3em #ccc;
-    background: #d9ffb3;
+    /* box-shadow: 0px 0px 0.3em #ccc;*/
+    background: #ffffff;
     overflow: hidden;
-    border: 1px outset #bfff80;
+}
+
+.table {
+    margin: 0px;
 }
 
 .table td, .table th {
     text-align: center;
+}
+
+.table th {
+    border:none;
+}
+
+.table td {
+    border: none;
+    /*1px solid #ccffff;*/
+}
+
+.table thead th {
+    border-bottom: 1px solid #3399ff;
+}
+
+.table tbody th {
+    border-right: 1px solid #3399ff;
 }
 
 .formChess {

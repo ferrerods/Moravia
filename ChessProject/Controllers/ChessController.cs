@@ -11,30 +11,26 @@ namespace ChessProject.Controllers
 {
     public class ChessController : Controller
     {
+        private Board newBoard = new BoardsController().Create();
+        private Chess newChess = new Chess();
+
         public IActionResult Index()
         {
-            Initialize();
-            RandomPiece();
+            Create();
             return View();
         }
 
         public ActionResult NewGame() {
+            newChess.Board = new BoardsController().Inicializate();
             return View(); //FALTA
         }
-        private void Initialize()
+        private void Create()
         {
-            Board newBoard = new BoardsController().Initialize();
+            newChess.Name = "game" + DateTime.Now;
+            newChess.BeginPlay = DateTime.Now;
+            newChess.Board = newBoard;
+        }
 
-            Chess newChess = new Chess
-            {
-                Name = "game" + DateTime.Now,
-                BeginPlay = DateTime.Now,
-                Board = newBoard,
-            };
-        }
-        private void RandomPiece()
-        {
-        }
 
     }
 }

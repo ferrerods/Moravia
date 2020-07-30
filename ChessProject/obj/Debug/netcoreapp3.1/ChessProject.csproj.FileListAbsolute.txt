@@ -429,7 +429,6 @@ C:\Users\Dalila\Source\Repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtim
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.csprojAssemblyReference.cache
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.AssemblyInfoInputs.cache
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.AssemblyInfo.cs
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.csproj.CoreCompileInputs.cache
