@@ -15,7 +15,7 @@ namespace ChessProject.Controllers
         private const int nroSquare = 64;
         private const int nroPiece = 32;
         private const int nroColumn = 8;
-        private string[] Row = { "a", "b", "c", "d", "e", "f", "h" };
+        private string[] Row = { "a", "b", "c", "d", "e", "f", "g", "h" };
         private string colorSquareD = "dark";
         private string colorSquareL = "light";
         private string colorSquare = "dark";
@@ -72,7 +72,8 @@ namespace ChessProject.Controllers
                         {
                             Name = "pawn" + p + colorB,
                             Color = colorB,
-                            Dead = false
+                            Dead = false,
+                            Img = "♟",
                         };
 
                         pieceList.Add(pawnpcolorB);
@@ -85,7 +86,8 @@ namespace ChessProject.Controllers
                         {
                             Name = "pawn" + aux + colorW,
                             Color = colorW,
-                            Dead = false
+                            Dead = false,
+                            Img = "♙",
                         };
 
                         pieceList.Add(pawnauxcolorW);
@@ -99,14 +101,16 @@ namespace ChessProject.Controllers
                 {
                     Name = "tower1" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♜",
                 };
 
                 PieceTower tower2colorB = new PieceTower
                 {
                     Name = "tower2" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♜",
                 };
 
                 pieceList.Add(tower1colorB);
@@ -117,14 +121,16 @@ namespace ChessProject.Controllers
                 {
                     Name = "tower1" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♖",
                 };
 
                 PieceTower tower2colorW = new PieceTower
                 {
                     Name = "tower2" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♖",
                 };
 
                 pieceList.Add(tower1colorW);
@@ -137,14 +143,16 @@ namespace ChessProject.Controllers
                 {
                     Name = "bishop1" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♝",
                 };
 
                 PieceBishop bishop2colorB = new PieceBishop
                 {
                     Name = "bishop2" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♝",
                 };
 
                 pieceList.Add(bishop1colorB);
@@ -155,14 +163,16 @@ namespace ChessProject.Controllers
                 {
                     Name = "bishop1" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♗",
                 };
 
                 PieceBishop bishop2colorW = new PieceBishop
                 {
                     Name = "bishop2" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♗",
                 };
 
                 pieceList.Add(bishop1colorW);
@@ -176,14 +186,16 @@ namespace ChessProject.Controllers
                 {
                     Name = "horse1" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♞",
                 };
 
                 PieceHorse horse2colorB = new PieceHorse
                 {
                     Name = "horse2" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♞",
                 };
 
                 pieceList.Add(horse1colorB);
@@ -194,14 +206,16 @@ namespace ChessProject.Controllers
                 {
                     Name = "horse1" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♘",
                 };
 
                 PieceHorse horse2colorW = new PieceHorse
                 {
                     Name = "horse2" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♘",
                 };
 
                 pieceList.Add(horse1colorW);
@@ -215,7 +229,8 @@ namespace ChessProject.Controllers
                 {
                     Name = "queen" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♛",
                 };
 
                 pieceList.Add(queencolorB);
@@ -225,29 +240,32 @@ namespace ChessProject.Controllers
                 {
                     Name = "queen" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♕",
                 };
 
                 pieceList.Add(queencolorW);
                 #endregion
 
                 #region King
-                //create piece queen Black
+                //create piece king Black
                 PieceKing kingcolorB = new PieceKing
                 {
                     Name = "king" + colorB,
                     Color = colorB,
-                    Dead = false
+                    Dead = false,
+                    Img = "♚",
                 };
 
                 pieceList.Add(kingcolorB);
 
-                //create piece queen White
+                //create piece king White
                 PieceKing kingcolorW = new PieceKing
                 {
                     Name = "king" + colorW,
                     Color = colorW,
-                    Dead = false
+                    Dead = false,
+                    Img = "♔",
                 };
 
                 pieceList.Add(kingcolorW);
@@ -258,7 +276,7 @@ namespace ChessProject.Controllers
                 newBoard.Squares = squareList;
                 newBoard.Pieces = pieceList;
 
-                RandomPieces();
+                newBoard = RandomPieces(newBoard);
 
                 return newBoard;
             }
@@ -266,15 +284,70 @@ namespace ChessProject.Controllers
 
         }
 
-        public void RandomPieces() 
-        { 
+        public Board RandomPieces(Board newBoard)
+        {
+            #region bishop
+            //colummna a 
+            newBoard.Squares.First(
+                s => s.PositionX == "a"
+                && s.PositionY == "1").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop1Black"));
 
+            newBoard.Pieces.First(f => f.Name.Contains("bishop1Black")).PositionX = "a";
+            newBoard.Pieces.First(f => f.Name.Contains("bishop1Black")).PositionY = "1";
+
+
+            //colummna h 
+            newBoard.Squares.First(
+                s => s.PositionX == "h"
+                && s.PositionY == "1").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop1White"));
+
+            newBoard.Pieces.First(f => f.Name.Contains("bishop1White")).PositionX = "h";
+            newBoard.Pieces.First(f => f.Name.Contains("bishop1White")).PositionY = "1";
+
+            //colummna d 
+            newBoard.Squares.First(
+                s => s.PositionX == "d"
+                && s.PositionY == "5").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop2Black"));
+
+            newBoard.Pieces.First(f => f.Name.Contains("bishop2Black")).PositionX = "d";
+            newBoard.Pieces.First(f => f.Name.Contains("bishop2Black")).PositionY = "5";
+
+            //colummna e 
+            newBoard.Squares.First(
+                s => s.PositionX == "e"
+                && s.PositionY == "5").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop2White"));
+
+            newBoard.Pieces.First(f => f.Name.Contains("bishop2White")).PositionX = "e";
+            newBoard.Pieces.First(f => f.Name.Contains("bishop2White")).PositionY = "5";
+            #endregion
+
+            #region Tower
+            newBoard.Squares.First(
+                s => s.PositionX == "b"
+                && s.PositionY == "2").Piece = newBoard.Pieces.First(f => f.Name.Contains("tower1Black"));
+
+            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionX = "b";
+            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionY = "2";
+
+            newBoard.Squares.First(
+                s => s.PositionX == "f"
+                && s.PositionY == "6").Piece = newBoard.Pieces.First(f => f.Name.Contains("tower2Black"));
+
+            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionX = "f";
+            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionY = "6";
+
+            #endregion
+
+
+            return newBoard;
         }
 
-        public Board Inicializate()
+        public Board Inicializate(Board activeBoard)
         {
-            try { 
-                CleanBoard();
+            try {
+
+                if (activeBoard == null){ activeBoard = Create(); }
+                else { CleanBoard(activeBoard); }
 
                 var fila7 = "7";
                 var fila8 = "8";
@@ -285,143 +358,151 @@ namespace ChessProject.Controllers
                 //pawn
                 foreach (string r in Row)
                 {
-                    foreach (Piece piece in (newBoard.Pieces.Where(p => p.Name.Contains("pawn") && p.Color.Equals(colorB))))
+                    foreach (Piece piece in (activeBoard.Pieces.Where(p => p.Name.Contains("pawn") && p.Color.Equals(colorB))))
                     {
                         piece.PositionX = r;
                         piece.PositionY = fila7;
 
-                        (newBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila7)).Piece = piece;
-                        (newBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila7)).Empty = false;
+                        (activeBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila7)).Piece = piece;
+                        (activeBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila7)).Empty = false;
                     }
                 }
                 //queen
-                newBoard.Pieces.First(p => p.Name.Contains("queenBlack")).PositionX = "e";
-                newBoard.Pieces.First(p => p.Name.Contains("queenBlack")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("e8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("queenBlack"));
-                (newBoard.Squares.First(s => s.Name.Contains("e8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("queenBlack")).PositionX = "d";
+                activeBoard.Pieces.First(p => p.Name.Contains("queenBlack")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8d"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("queenBlack"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8d"))).Empty = false;
 
                 //king
-                newBoard.Pieces.First(p => p.Name.Contains("kingBlack")).PositionX = "d";
-                newBoard.Pieces.First(p => p.Name.Contains("kingBlack")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("d8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("kingBlack"));
-                (newBoard.Squares.First(s => s.Name.Contains("d8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("kingBlack")).PositionX = "e";
+                activeBoard.Pieces.First(p => p.Name.Contains("kingBlack")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8e"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("kingBlack"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8e"))).Empty = false;
 
                 //tower
-                newBoard.Pieces.First(p => p.Name.Contains("tower1Black")).PositionX = "a";
-                newBoard.Pieces.First(p => p.Name.Contains("tower1Black")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("a8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("tower1Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("a8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("tower1Black")).PositionX = "a";
+                activeBoard.Pieces.First(p => p.Name.Contains("tower1Black")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8a"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("tower1Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8a"))).Empty = false;
 
-                newBoard.Pieces.First(p => p.Name.Contains("tower2Black")).PositionX = "h";
-                newBoard.Pieces.First(p => p.Name.Contains("tower2Black")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("h8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("tower2Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("h8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("tower2Black")).PositionX = "h";
+                activeBoard.Pieces.First(p => p.Name.Contains("tower2Black")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8h"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("tower2Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8h"))).Empty = false;
 
                 //horse
-                newBoard.Pieces.First(p => p.Name.Contains("horse1Black")).PositionX = "b";
-                newBoard.Pieces.First(p => p.Name.Contains("horse1Black")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("b8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("horse1Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("b8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("horse1Black")).PositionX = "b";
+                activeBoard.Pieces.First(p => p.Name.Contains("horse1Black")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8b"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("horse1Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8b"))).Empty = false;
 
-                newBoard.Pieces.First(p => p.Name.Contains("horse2Black")).PositionX = "g";
-                newBoard.Pieces.First(p => p.Name.Contains("horse2Black")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("g8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("horse2Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("g8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("horse2Black")).PositionX = "g";
+                activeBoard.Pieces.First(p => p.Name.Contains("horse2Black")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8g"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("horse2Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8g"))).Empty = false;
 
                 //bishop
-                newBoard.Pieces.First(p => p.Name.Contains("bishop1Black")).PositionX = "c";
-                newBoard.Pieces.First(p => p.Name.Contains("bishop1Black")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("c8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("bishop1Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("c8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop1Black")).PositionX = "c";
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop1Black")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8c"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("bishop1Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8c"))).Empty = false;
 
-                newBoard.Pieces.First(p => p.Name.Contains("bishop2Black")).PositionX = "f";
-                newBoard.Pieces.First(p => p.Name.Contains("bishop2Black")).PositionY = fila8;
-                (newBoard.Squares.First(s => s.Name.Contains("f8"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("bishop2Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("f8"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop2Black")).PositionX = "f";
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop2Black")).PositionY = fila8;
+                (activeBoard.Squares.First(s => s.Name.Contains("8f"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("bishop2Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("8f"))).Empty = false;
                 #endregion
 
                 #region white
                 //pawn
                 foreach (string r in Row)
                 {
-                    foreach (Piece piece in (newBoard.Pieces.Where(p => p.Name.Contains("pawn") && p.Color.Equals(colorW))))
+                    foreach (Piece piece in (activeBoard.Pieces.Where(p => p.Name.Contains("pawn") && p.Color.Equals(colorW))))
                     {
                         piece.PositionX = r;
                         piece.PositionY = fila2;
 
-                        (newBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila2)).Piece = piece;
-                        (newBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila2)).Empty = false;
+                        (activeBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila2)).Piece = piece;
+                        (activeBoard.Squares.First(s => s.PositionX == r && s.PositionY == fila2)).Empty = false;
                     }
                 }
 
                 //queen
-                newBoard.Pieces.First(p => p.Name.Contains("queenWhite")).PositionX = "e";
-                newBoard.Pieces.First(p => p.Name.Contains("queenWhite")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("e1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("queenWhite"));
-                (newBoard.Squares.First(s => s.Name.Contains("e1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("queenWhite")).PositionX = "d";
+                activeBoard.Pieces.First(p => p.Name.Contains("queenWhite")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1d"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("queenWhite"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1d"))).Empty = false;
 
                 //king
-                newBoard.Pieces.First(p => p.Name.Contains("kingWhite")).PositionX = "d";
-                newBoard.Pieces.First(p => p.Name.Contains("kingWhite")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("d1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("kingWhite"));
-                (newBoard.Squares.First(s => s.Name.Contains("d1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("kingWhite")).PositionX = "e";
+                activeBoard.Pieces.First(p => p.Name.Contains("kingWhite")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1e"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("kingWhite"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1e"))).Empty = false;
 
                 //tower
-                newBoard.Pieces.First(p => p.Name.Contains("tower1White")).PositionX = "a";
-                newBoard.Pieces.First(p => p.Name.Contains("tower1White")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("a1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("tower1White"));
-                (newBoard.Squares.First(s => s.Name.Contains("a1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("tower1White")).PositionX = "a";
+                activeBoard.Pieces.First(p => p.Name.Contains("tower1White")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1a"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("tower1White"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1a"))).Empty = false;
 
-                newBoard.Pieces.First(p => p.Name.Contains("tower2White")).PositionX = "h";
-                newBoard.Pieces.First(p => p.Name.Contains("tower2White")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("h1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("tower2White"));
-                (newBoard.Squares.First(s => s.Name.Contains("h1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("tower2White")).PositionX = "h";
+                activeBoard.Pieces.First(p => p.Name.Contains("tower2White")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1h"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("tower2White"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1h"))).Empty = false;
 
                 //horse
-                newBoard.Pieces.First(p => p.Name.Contains("horse1White")).PositionX = "b";
-                newBoard.Pieces.First(p => p.Name.Contains("horse1White")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("b1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("horse1Black"));
-                (newBoard.Squares.First(s => s.Name.Contains("b1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("horse1White")).PositionX = "b";
+                activeBoard.Pieces.First(p => p.Name.Contains("horse1White")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1b"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("horse1Black"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1b"))).Empty = false;
 
-                newBoard.Pieces.First(p => p.Name.Contains("horse2White")).PositionX = "g";
-                newBoard.Pieces.First(p => p.Name.Contains("horse2White")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("g1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("horse2White"));
-                (newBoard.Squares.First(s => s.Name.Contains("g1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("horse2White")).PositionX = "g";
+                activeBoard.Pieces.First(p => p.Name.Contains("horse2White")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1g"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("horse2White"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1g"))).Empty = false;
 
                 //bishop
-                newBoard.Pieces.First(p => p.Name.Contains("bishop1White")).PositionX = "c";
-                newBoard.Pieces.First(p => p.Name.Contains("bishop1White")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("c1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("bishop1White"));
-                (newBoard.Squares.First(s => s.Name.Contains("c1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop1White")).PositionX = "c";
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop1White")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1c"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("bishop1White"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1c"))).Empty = false;
 
-                newBoard.Pieces.First(p => p.Name.Contains("bishop2White")).PositionX = "f";
-                newBoard.Pieces.First(p => p.Name.Contains("bishop2White")).PositionY = fila1;
-                (newBoard.Squares.First(s => s.Name.Contains("f1"))).Piece = newBoard.Pieces.First(p => p.Name.Contains("bishop2White"));
-                (newBoard.Squares.First(s => s.Name.Contains("f1"))).Empty = false;
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop2White")).PositionX = "f";
+                activeBoard.Pieces.First(p => p.Name.Contains("bishop2White")).PositionY = fila1;
+                (activeBoard.Squares.First(s => s.Name.Contains("1f"))).Piece = activeBoard.Pieces.First(p => p.Name.Contains("bishop2White"));
+                (activeBoard.Squares.First(s => s.Name.Contains("1f"))).Empty = false;
 
                 #endregion
 
-                return newBoard;
+                return activeBoard;
             }
             catch (Exception ex) { return null; }
         }
 
-        private void CleanBoard()
+        private void CleanBoard(Board activeBoard)
         {
-            foreach (Square square in newBoard.Squares) {
-                if (square.Empty == false)
+            if(activeBoard != null && (activeBoard.Squares != null || activeBoard.Squares.Count != 0))
+            {
+                foreach (Square square in activeBoard.Squares)
                 {
-                    square.Empty = true;
-                    square.Piece = null;
+                    if (square.Empty == false)
+                    {
+                        square.Empty = true;
+                        square.Piece = null;
+                    }
                 }
             }
 
-            foreach (Piece piece in newBoard.Pieces) { 
-                if(piece.Dead == true)
+            if (activeBoard != null && (activeBoard.Pieces != null || activeBoard.Pieces.Count != 0))
+            {
+                foreach (Piece piece in activeBoard.Pieces)
                 {
-                    piece.Dead = false;
-                    piece.PositionX = string.Empty;
-                    piece.PositionY = string.Empty;
+                    if (piece.Dead == true)
+                    {
+                        piece.Dead = false;
+                        piece.PositionX = string.Empty;
+                        piece.PositionY = string.Empty;
+                    }
                 }
             }
         }

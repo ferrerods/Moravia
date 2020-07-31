@@ -14,6 +14,7 @@ namespace ChessProject.Models
         public override string PositionY { get; set; }
         public override string Color { get; set; }
         public override bool Dead { get; set; }
+        public override string Img { get; set; }
     }
 
 }

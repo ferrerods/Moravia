@@ -13,5 +13,6 @@ namespace ChessProject.Models
         public abstract string PositionY { get; set; } // (1, a)
         public abstract string Color { get; set; }
         public abstract bool Dead { get; set; }
+        public abstract string Img { get; set; }
     }
 }

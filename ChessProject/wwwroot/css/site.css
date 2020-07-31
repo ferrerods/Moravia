@@ -73,12 +73,11 @@ body {
 /******** CHESS **********/
 .square {
     font-size: 15pt;
-    color: #b3ffff; /*#ccffff;*/
+    background: #ffffff; /*#ccffff;*/
 }
 
 .squareDark {
     background: #3399ff;
-    color: #3399ff;
 }
 
 .board {
@@ -93,6 +92,7 @@ body {
 
 .table {
     margin: 0px;
+    text-align: center;
 }
 
 .table td, .table th {
@@ -114,6 +114,11 @@ body {
 
 .table tbody th {
     border-right: 1px solid #3399ff;
+}
+
+.table tbody td {
+    font-size: 20pt;
+    color: black;
 }
 
 .formChess {
