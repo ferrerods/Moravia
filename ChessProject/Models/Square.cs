@@ -14,6 +14,8 @@ namespace ChessProject.Models
         public string Color { get; set; } //light or dark
         public bool Empty { get; set; }
 
+        public string ImgPiece { get; set; }
+
         public int PieceId { get; set; }
         public Piece Piece { get; set; }
     }

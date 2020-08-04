@@ -8,7 +8,7 @@ namespace ChessProject.Models
     public class Board
     {
         public int Id { get; set; }
-        public ICollection<Square> Squares { get; set; }
-        public ICollection<Piece> Pieces { get; set; }
+        public List<Square> Squares { get; set; }
+        public List<Piece> Pieces { get; set; }
     }
 }

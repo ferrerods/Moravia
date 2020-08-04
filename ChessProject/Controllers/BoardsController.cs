@@ -34,12 +34,17 @@ namespace ChessProject.Controllers
         {
             try {
 
+                int countNroSquare = 0;
+
                 #region Square 
                 for (int i = 1; i < nroColumn + 1; i++)
-                {
-                    //si fila par comienza con light o i = 1
-                    if ((i / 2) == 0) { colorSquare = colorSquareL; }
-                    else if ((i == 1) || (i / 2) != 0) { colorSquare = colorSquareD; }
+                {                    
+                    if (countNroSquare == 0 || countNroSquare == 16
+                        || countNroSquare == 32 || countNroSquare == 48 || countNroSquare == 64)
+                    { colorSquare = colorSquareD; }
+                    if (countNroSquare == 8 || countNroSquare == 24
+                        || countNroSquare == 40 || countNroSquare == 56)
+                    { colorSquare = colorSquareL; }
 
                     foreach (string item in Row)
                     {
@@ -55,6 +60,9 @@ namespace ChessProject.Controllers
                         squareList.Add(squareiitem);
 
                         if (colorSquare == colorSquareD) { colorSquare = colorSquareL; }
+                        else { colorSquare = colorSquareD; }
+
+                        countNroSquare++;
                     }
                 }
                 #endregion
@@ -62,7 +70,7 @@ namespace ChessProject.Controllers
                 #region Piece
 
                 #region Pawn    
-                for (int p = 1; p < ((nroColumn * 2)+1); p++)
+                for (int p = 1; p < ((nroColumn * 2) + 1); p++)
                 {
 
                     if (nroColumn >= p)
@@ -115,7 +123,7 @@ namespace ChessProject.Controllers
 
                 pieceList.Add(tower1colorB);
                 pieceList.Add(tower2colorB);
-                    
+
                 //create piece Tower White
                 PieceTower tower1colorW = new PieceTower
                 {
@@ -200,7 +208,7 @@ namespace ChessProject.Controllers
 
                 pieceList.Add(horse1colorB);
                 pieceList.Add(horse2colorB);
-                   
+
                 //create piece Horse White
                 PieceHorse horse1colorW = new PieceHorse
                 {
@@ -286,60 +294,100 @@ namespace ChessProject.Controllers
 
         public Board RandomPieces(Board newBoard)
         {
-            #region bishop
-            //colummna a 
-            newBoard.Squares.First(
-                s => s.PositionX == "a"
-                && s.PositionY == "1").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop1Black"));
+            try
+            {
+                List<int> listNro = RandomList();
+                var nro = 0;
 
-            newBoard.Pieces.First(f => f.Name.Contains("bishop1Black")).PositionX = "a";
-            newBoard.Pieces.First(f => f.Name.Contains("bishop1Black")).PositionY = "1";
+                foreach (Piece item in newBoard.Pieces)
+                {
+                    if (!item.Name.Contains("bishop")) {
 
+                        newBoard.Squares[listNro[nro]].Piece = item;
+                        newBoard.Squares[listNro[nro]].ImgPiece = item.Img;
 
-            //colummna h 
-            newBoard.Squares.First(
-                s => s.PositionX == "h"
-                && s.PositionY == "1").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop1White"));
+                        newBoard.Pieces.First(f => f.Name == item.Name).PositionX = newBoard.Squares[listNro[nro]].PositionX;
+                        newBoard.Pieces.First(f => f.Name == item.Name).PositionY = newBoard.Squares[listNro[nro]].PositionY;
+                    }
 
-            newBoard.Pieces.First(f => f.Name.Contains("bishop1White")).PositionX = "h";
-            newBoard.Pieces.First(f => f.Name.Contains("bishop1White")).PositionY = "1";
+                    nro++;
+                }
 
-            //colummna d 
-            newBoard.Squares.First(
-                s => s.PositionX == "d"
-                && s.PositionY == "5").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop2Black"));
+                int countNro = 0;
 
-            newBoard.Pieces.First(f => f.Name.Contains("bishop2Black")).PositionX = "d";
-            newBoard.Pieces.First(f => f.Name.Contains("bishop2Black")).PositionY = "5";
+                for (int p = nro; p <= listNro.Count + 1; p++)
+                {
+                    if (p == nro) {
+                        newBoard.Squares[listNro[p]].Piece = newBoard.Pieces[20];
+                        newBoard.Squares[listNro[p]].ImgPiece = newBoard.Pieces[20].Img;
 
-            //colummna e 
-            newBoard.Squares.First(
-                s => s.PositionX == "e"
-                && s.PositionY == "5").Piece = newBoard.Pieces.First(f => f.Name.Contains("bishop2White"));
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[20].Name).PositionX = newBoard.Squares[listNro[p]].PositionX;
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[20].Name).PositionY = newBoard.Squares[listNro[p]].PositionY;
+                    }
 
-            newBoard.Pieces.First(f => f.Name.Contains("bishop2White")).PositionX = "e";
-            newBoard.Pieces.First(f => f.Name.Contains("bishop2White")).PositionY = "5";
-            #endregion
+                    if (newBoard.Squares[listNro[nro]].Color != newBoard.Squares[listNro[p]].Color) {
+                        newBoard.Squares[listNro[p]].Piece = newBoard.Pieces[21];
+                        newBoard.Squares[listNro[p]].ImgPiece = newBoard.Pieces[21].Img;
 
-            #region Tower
-            newBoard.Squares.First(
-                s => s.PositionX == "b"
-                && s.PositionY == "2").Piece = newBoard.Pieces.First(f => f.Name.Contains("tower1Black"));
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[21].Name).PositionX = newBoard.Squares[listNro[p]].PositionX;
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[21].Name).PositionY = newBoard.Squares[listNro[p]].PositionY;
 
-            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionX = "b";
-            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionY = "2";
+                        countNro = p+1;
 
-            newBoard.Squares.First(
-                s => s.PositionX == "f"
-                && s.PositionY == "6").Piece = newBoard.Pieces.First(f => f.Name.Contains("tower2Black"));
+                        break;
+                    }
+                }
 
-            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionX = "f";
-            newBoard.Pieces.First(f => f.Name.Contains("tower1Black")).PositionY = "6";
+                for (int t = countNro; t <= listNro.Count + 1; t++)
+                {
+                    if (t == countNro)
+                    {
+                        newBoard.Squares[listNro[t]].Piece = newBoard.Pieces[22];
+                        newBoard.Squares[listNro[t]].ImgPiece = newBoard.Pieces[22].Img;
 
-            #endregion
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[22].Name).PositionX = newBoard.Squares[listNro[t]].PositionX;
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[22].Name).PositionY = newBoard.Squares[listNro[t]].PositionY;
+                    }
 
+                    if (newBoard.Squares[listNro[countNro]].Color != newBoard.Squares[listNro[t]].Color)
+                    {
+                        newBoard.Squares[listNro[t]].Piece = newBoard.Pieces[23];
+                        newBoard.Squares[listNro[t]].ImgPiece = newBoard.Pieces[23].Img;
 
-            return newBoard;
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[23].Name).PositionX = newBoard.Squares[listNro[t]].PositionX;
+                        newBoard.Pieces.First(f => f.Name == newBoard.Pieces[23].Name).PositionY = newBoard.Squares[listNro[t]].PositionY;
+
+                        break;
+                    }
+                }
+
+                return newBoard;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<int> RandomList()
+        {
+            List<int> values = new List<int>();
+
+            for (int i = 0; i < 64; i++) {
+                values.Add(i);
+            }
+
+            var n = values.Count;
+            var rnd = new Random();
+            for (int i = n - 1; i > 0; i--)
+            {
+                var j = rnd.Next(0, i);
+                var temp = values[i];
+                values[i] = values[j];
+                values[j] = temp;
+            }
+
+            return values;
         }
 
         public Board Inicializate(Board activeBoard)

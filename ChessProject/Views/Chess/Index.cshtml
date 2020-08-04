@@ -1,4 +1,4 @@
-﻿@model List<ChessProject.Models.Piece>
+﻿@model List<ChessProject.Models.Square>
 @{
     ViewData["Title"] = "Chess";
 }
@@ -18,120 +18,120 @@
     <label>
         Enter the coordinates of the new position:
     </label>
-    <input type="text" id="positionSelected" class="input-group-text"  />
+    <input type="text" id="positionSelected" class="input-group-text" />
 </fom>
 
-<div class="board">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">a</th>
-                <th scope="col">b</th>
-                <th scope="col">c</th>
-                <th scope="col">d</th>
-                <th scope="col">e</th>
-                <th scope="col">f</th>
-                <th scope="col">g</th>
-                <th scope="col">h</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">8</th>
-                <td id="8a" class="square">@ViewBag.Pieces[0].Img</td>
-                <td id="8b" class="squareDark"></td>
-                <td id="8c" class="square">@ViewBag.Pieces[22].Img</td>
-                <td id="8d" class="squareDark">@ViewBag.Pieces[31].Img</td>
-                <td id="8e" class="square"></td>
-                <td id="8f" class="squareDark">@ViewBag.Pieces[9].Img</td>
-                <td id="8g" class="square"></td>
-                <td id="8h" class="squareDark">@ViewBag.Pieces[16].Img</td>
-            </tr>
-            <tr>
-                <th scope="row">7</th>
-                <td id="7a" class="squareDark"></td>
-                <td id="7b" class="square">@ViewBag.Pieces[1].Img</td>
-                <td id="7c" class="squareDark"></td>
-                <td id="7d" class="square"></td>
-                <td id="7e" class="squareDark">@ViewBag.Pieces[15].Img</td>
-                <td id="7f" class="square"></td>
-                <td id="7g" class="squareDark">@ViewBag.Pieces[21].Img</td>
-                <td id="7h" class="square"></td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td id="6a" class="square">@ViewBag.Pieces[4].Img</td>
-                <td id="6b" class="squareDark"></td>
-                <td id="6c" class="square">@ViewBag.Pieces[29].Img</td>
-                <td id="6d" class="squareDark">@ViewBag.Pieces[3].Img</td>
-                <td id="6e" class="square"></td>
-                <td id="6f" class="squareDark">@ViewBag.Pieces[11].Img</td>
-                <td id="6g" class="square"></td>
-                <td id="6h" class="squareDark"></td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td id="5a" class="squareDark"></td>
-                <td id="5b" class="square">@ViewBag.Pieces[10].Img</td>
-                <td id="5c" class="squareDark"></td>
-                <td id="5d" class="square"></td>
-                <td id="5e" class="squareDark">@ViewBag.Pieces[28].Img</td>
-                <td id="5f" class="square"></td>
-                <td id="5g" class="squareDark"></td>
-                <td id="5h" class="square">@ViewBag.Pieces[27].Img</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td id="4a" class="square">@ViewBag.Pieces[30].Img</td>
-                <td id="4b" class="squareDark"></td>
-                <td id="4c" class="square">@ViewBag.Pieces[14].Img</td>
-                <td id="4d" class="squareDark"></td>
-                <td id="4e" class="square"></td>
-                <td id="4f" class="squareDark">@ViewBag.Pieces[26].Img</td>
-                <td id="4g" class="square"></td>
-                <td id="4h" class="squareDark">@ViewBag.Pieces[23].Img</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td id="3a" class="squareDark">@ViewBag.Pieces[13].Img</td>
-                <td id="3b" class="square"></td>
-                <td id="3c" class="squareDark">@ViewBag.Pieces[17].Img</td>
-                <td id="3d" class="square"></td>
-                <td id="3e" class="squareDark">@ViewBag.Pieces[5].Img</td>
-                <td id="3f" class="square"></td>
-                <td id="3g" class="squareDark">@ViewBag.Pieces[25].Img</td>
-                <td id="3h" class="square">@ViewBag.Pieces[24].Img</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td id="2a" class="square">@ViewBag.Pieces[6].Img</td>
-                <td id="2b" class="squareDark"></td>
-                <td id="2c" class="square"></td>
-                <td id="2d" class="squareDark">@ViewBag.Pieces[19].Img</td>
-                <td id="2e" class="square">@ViewBag.Pieces[20].Img</td>
-                <td id="2f" class="squareDark"></td>
-                <td id="2g" class="square">@ViewBag.Pieces[2].Img</td>
-                <td id="2h" class="squareDark"></td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td id="1a" class="squareDark"></td>
-                <td id="1b" class="square"></td>
-                <td id="1c" class="squareDark">@ViewBag.Pieces[12].Img</td>
-                <td id="1d" class="square"></td>
-                <td id="1e" class="squareDark">@ViewBag.Pieces[18].Img</td>
-                <td id="1f" class="square"></td>
-                <td id="1g" class="squareDark">@ViewBag.Pieces[8].Img</td>
-                <td id="1h" class="square">@ViewBag.Pieces[7].Img</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="board">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">a</th>
+                    <th scope="col">b</th>
+                    <th scope="col">c</th>
+                    <th scope="col">d</th>
+                    <th scope="col">e</th>
+                    <th scope="col">f</th>
+                    <th scope="col">g</th>
+                    <th scope="col">h</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>8</th>
+                    <td id="8a" class="square">@ViewBag.Square[63].ImgPiece</td>
+                    <td id="8b" class="squareDark">@ViewBag.Square[62].ImgPiece</td>
+                    <td id="8c" class="square">@ViewBag.Square[61].ImgPiece</td>
+                    <td id="8d" class="squareDark">@ViewBag.Square[60].ImgPiece</td>
+                    <td id="8e" class="square">@ViewBag.Square[59].ImgPiece</td>
+                    <td id="8f" class="squareDark">@ViewBag.Square[58].ImgPiece</td>
+                    <td id="8g" class="square">@ViewBag.Square[57].ImgPiece</td>
+                    <td id="8h" class="squareDark">@ViewBag.Square[56].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td id="7a" class="squareDark">@ViewBag.Square[55].ImgPiece</td>
+                    <td id="7b" class="square">@ViewBag.Square[54].ImgPiece</td>
+                    <td id="7c" class="squareDark">@ViewBag.Square[53].ImgPiece</td>
+                    <td id="7d" class="square">@ViewBag.Square[52].ImgPiece</td>
+                    <td id="7e" class="squareDark">@ViewBag.Square[51].ImgPiece</td>
+                    <td id="7f" class="square">@ViewBag.Square[50].ImgPiece</td>
+                    <td id="7g" class="squareDark">@ViewBag.Square[49].ImgPiece</td>
+                    <td id="7h" class="square">@ViewBag.Square[48].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td id="6a" class="square">@ViewBag.Square[47].ImgPiece</td>
+                    <td id="6b" class="squareDark">@ViewBag.Square[46].ImgPiece</td>
+                    <td id="6c" class="square">@ViewBag.Square[45].ImgPiece</td>
+                    <td id="6d" class="squareDark">@ViewBag.Square[44].ImgPiece</td>
+                    <td id="6e" class="square">@ViewBag.Square[43].ImgPiece</td>
+                    <td id="6f" class="squareDark">@ViewBag.Square[42].ImgPiece</td>
+                    <td id="6g" class="square">@ViewBag.Square[41].ImgPiece</td>
+                    <td id="6h" class="squareDark">@ViewBag.Square[40].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td id="5a" class="squareDark">@ViewBag.Square[39].ImgPiece</td>
+                    <td id="5b" class="square">@ViewBag.Square[38].ImgPiece</td>
+                    <td id="5c" class="squareDark">@ViewBag.Square[37].ImgPiece</td>
+                    <td id="5d" class="square">@ViewBag.Square[36].ImgPiece</td>
+                    <td id="5e" class="squareDark">@ViewBag.Square[35].ImgPiece</td>
+                    <td id="5f" class="square">@ViewBag.Square[34].ImgPiece</td>
+                    <td id="5g" class="squareDark">@ViewBag.Square[33].ImgPiece</td>
+                    <td id="5h" class="square">@ViewBag.Square[32].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td id="4a" class="square">@ViewBag.Square[31].ImgPiece</td>
+                    <td id="4b" class="squareDark">@ViewBag.Square[30].ImgPiece</td>
+                    <td id="4c" class="square">@ViewBag.Square[29].ImgPiece</td>
+                    <td id="4d" class="squareDark">@ViewBag.Square[28].ImgPiece</td>
+                    <td id="4e" class="square">@ViewBag.Square[27].ImgPiece</td>
+                    <td id="4f" class="squareDark">@ViewBag.Square[26].ImgPiece</td>
+                    <td id="4g" class="square">@ViewBag.Square[25].ImgPiece</td>
+                    <td id="4h" class="squareDark">@ViewBag.Square[24].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td id="3a" class="squareDark">@ViewBag.Square[23].ImgPiece</td>
+                    <td id="3b" class="square">@ViewBag.Square[22].ImgPiece</td>
+                    <td id="3c" class="squareDark">@ViewBag.Square[21].ImgPiece</td>
+                    <td id="3d" class="square">@ViewBag.Square[20].ImgPiece</td>
+                    <td id="3e" class="squareDark">@ViewBag.Square[19].ImgPiece</td>
+                    <td id="3f" class="square">@ViewBag.Square[18].ImgPiece</td>
+                    <td id="3g" class="squareDark">@ViewBag.Square[17].ImgPiece</td>
+                    <td id="3h" class="square">@ViewBag.Square[16].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td id="2a" class="square">@ViewBag.Square[15].ImgPiece</td>
+                    <td id="2b" class="squareDark">@ViewBag.Square[14].ImgPiece</td>
+                    <td id="2c" class="square">@ViewBag.Square[13].ImgPiece</td>
+                    <td id="2d" class="squareDark">@ViewBag.Square[12].ImgPiece</td>
+                    <td id="2e" class="square">@ViewBag.Square[11].ImgPiece</td>
+                    <td id="2f" class="squareDark">@ViewBag.Square[10].ImgPiece</td>
+                    <td id="2g" class="square">@ViewBag.Square[9].ImgPiece</td>
+                    <td id="2h" class="squareDark">@ViewBag.Square[8].ImgPiece</td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td id="1a" class="squareDark">@ViewBag.Square[7].ImgPiece</td>
+                    <td id="1b" class="square">@ViewBag.Square[6].ImgPiece</td>
+                    <td id="1c" class="squareDark">@ViewBag.Square[5].ImgPiece</td>
+                    <td id="1d" class="square">@ViewBag.Square[4].ImgPiece</td>
+                    <td id="1e" class="squareDark">@ViewBag.Square[3].ImgPiece</td>
+                    <td id="1f" class="square">@ViewBag.Square[2].ImgPiece</td>
+                    <td id="1g" class="squareDark">@ViewBag.Square[1].ImgPiece</td>
+                    <td id="1h" class="square">@ViewBag.Square[0].ImgPiece</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
-@section scripts {
-    <script type="text/javascript">
+    @section scripts {
+        <script type="text/javascript">
         $(document).ready(function () {
 
             $("#pieceSelected").prop('disabled', true);
@@ -180,5 +180,5 @@
             }
 
         });
-    </script>
-}
+        </script>
+    }

@@ -9,5 +9,6 @@ namespace ChessProject.ViewModels
     public class ChessBoardViewModel
     {
         public List<Square> Squares { get; set; }
+        public Piece Pieces { get; set; }
     }
 }

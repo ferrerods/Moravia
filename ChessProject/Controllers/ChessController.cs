@@ -18,7 +18,7 @@ namespace ChessProject.Controllers
         public IActionResult Index()
         {
             newChess = Create();
-            ViewBag.Pieces = newChess.Board.Pieces;
+            ViewBag.Square = newChess.Board.Squares;
 
             return View();
         }
