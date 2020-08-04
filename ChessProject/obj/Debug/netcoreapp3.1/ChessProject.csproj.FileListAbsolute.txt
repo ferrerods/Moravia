@@ -467,4 +467,3 @@ C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\staticw
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.dll
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.pdb
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.genruntimeconfig.cache
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.csprojAssemblyReference.cache

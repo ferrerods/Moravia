@@ -158,8 +158,10 @@
             function Validate() {
                 var varEntry = $("#pieceSelected").val();
 
+                var idSquare = ConvertId(varEntry);
+               
                 //busco en tabla
-                var square = "#" + varEntry;
+                var square = idSquare;
                 var squareVar = $(square).val();
 
                 if (squareVar == null)
@@ -177,6 +179,47 @@
                         case "♗": alert(bishop); //bishop white
                     }
                 }
+            }
+
+            function ConvertId(varEntry) {
+
+                var letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
+                var newArray = [];
+                var idSquare = Array.from(varEntry);
+
+                if (idSquare.length > 2 || idSquare.length < 2) {
+                        alert("Insert row-column"); 
+                }
+
+                $.each(idSquare, function (index, value) {
+                    if ($.isNumeric(value)) {
+
+                        if (value < 1 || value > 8) {
+                            alert("Insert values ​​from 1 to 8");
+                        }
+                        else {
+                            newArray.push("#");
+                            newArray.push(Value);
+                            newArray.push(idSquare[index + 1]);
+                        } 
+
+                    }
+                    else {
+                        if (!letters.include(value)) {
+                            alert("Insert values ​​from a to h");
+                        }
+                        else{
+                            newArray.push("#");
+                            newArray.push(idSquare[index + 1]);
+                            newArray.push(Value);
+                        }
+
+                    }
+
+                    alert(newArray.toString());
+                });
+
+                return newArray.toString();
             }
 
         });
