@@ -311,12 +311,6 @@ C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\static
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.dll
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.pdb
 C:\Users\Dalila\Source\Repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.genruntimeconfig.cache
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.AssemblyInfoInputs.cache
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.AssemblyInfo.cs
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.csproj.CoreCompileInputs.cache
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.RazorAssemblyInfo.cache
-C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.RazorAssemblyInfo.cs
 C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -447,6 +441,12 @@ C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtime
 C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Chano\source\repos\Moravia\ChessProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.AssemblyInfoInputs.cache
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.AssemblyInfo.cs
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.csproj.CoreCompileInputs.cache
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.RazorAssemblyInfo.cache
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.RazorAssemblyInfo.cs
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.TagHelpers.input.cache
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.TagHelpers.output.cache
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.RazorCoreGenerate.cache
@@ -467,3 +467,4 @@ C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\staticw
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.dll
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.pdb
 C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.genruntimeconfig.cache
+C:\Users\Chano\source\repos\Moravia\ChessProject\obj\Debug\netcoreapp3.1\ChessProject.csprojAssemblyReference.cache

@@ -152,75 +152,109 @@
             }
 
             $("#pieceSelected").change(function () {
-                Validate();
+                var varEntry = $("#pieceSelected").val();
+                var idSquare = ConvertIdAndValidate(varEntry);
+
+                Validate(varEntry);
             });
 
-            function Validate() {
-                var varEntry = $("#pieceSelected").val();
+            $("#positionSelected").change(function () {
+
+                var varEntry = $("#positionSelected").val();
+                //var idSquare = ConvertIdAndValidate(varEntry)
+                //Validate(varEntry);
+            });
+
+            function Validate(varEntry) {
 
                 var idSquare = ConvertId(varEntry);
                
                 //busco en tabla
-                var square = idSquare;
-                var squareVar = $(square).val();
+                if (idSquare != null) {
+                
+                    var square = idSquare;
+                    var squareVar = $(square).val();
 
-                if (squareVar == null)
-                { alert("Empty square"); }
-                else {
+                    if (squareVar == null)
+                    {
+                        alert("Empty square");
+                        return;
+                    }
+                    else {
 
-                    switch (squareVar) {
-                        case "♟": alert(peon); //pawn black
-                        case "♙": alert(peon); //pawn white
+                        switch (squareVar) {
+                            case "♟": alert(peon); //pawn black
+                            case "♙": alert(peon); //pawn white
 
-                        case "♞": alert(tower); //tower black
-                        case "♘": alert(tower); //tower white
+                            case "♞": alert(tower); //tower black
+                            case "♘": alert(tower); //tower white
 
-                        case "♝": alert(bishop); //bishop black
-                        case "♗": alert(bishop); //bishop white
+                            case "♝": alert(bishop); //bishop black
+                            case "♗": alert(bishop); //bishop white
+                        }
                     }
                 }
             }
 
-            function ConvertId(varEntry) {
+            function ConvertIdAndValidate(varEntry) {
 
                 var letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
                 var newArray = [];
                 var idSquare = Array.from(varEntry);
 
                 if (idSquare.length > 2 || idSquare.length < 2) {
-                        alert("Insert row-column"); 
+                    alert("Insert row-column");
+                    return;
                 }
 
-                $.each(idSquare, function (index, value) {
-                    if ($.isNumeric(value)) {
+                if ($.isNumeric(idSquare[0])) {
+                    if (idSquare[0] < 1 || idSquare[0] > 8) {
+                        alert("Insert values ​​from 1 to 8");
+                        return;
+                    }
+                    else {
+                        newArray.push("#");
+                        newArray.push(idSquare[0]);
+                        newArray.push(idSquare[1]);
 
-                        if (value < 1 || value > 8) {
+                        var newString = newArray.toString().replace(',', '');
+
+                        var squareVar = $(newString).val();
+                        if (squareVar == null) {
+                            alert("Empty square");
+                            return;
+                        }
+
+                        return newString
+                    } 
+                }
+                else {
+                    if ($.isNumeric(idSquare[1])) {
+                        if (idSquare[1] < 1 || idSquare[1] > 8) {
                             alert("Insert values ​​from 1 to 8");
+                            return;
                         }
                         else {
                             newArray.push("#");
-                            newArray.push(Value);
-                            newArray.push(idSquare[index + 1]);
+                            newArray.push(idSquare[1]);
+                            newArray.push(idSquare[0]);
+
+                            var newString = newArray.toString().replace(',', '');
+
+                            var squareVar = $(newString).val();
+                            if (squareVar == null) {
+                                alert("Empty square");
+                                return;
+                            }
+
+                            return newString
                         } 
 
                     }
-                    else {
-                        if (!letters.include(value)) {
-                            alert("Insert values ​​from a to h");
-                        }
-                        else{
-                            newArray.push("#");
-                            newArray.push(idSquare[index + 1]);
-                            newArray.push(Value);
-                        }
-
-                    }
-
-                    alert(newArray.toString());
-                });
-
-                return newArray.toString();
+                }
             }
+
+
 
         });
         </script>
