@@ -21,118 +21,124 @@
     <input type="text" id="positionSelected" class="input-group-text" />
 </fom>
 
-    <div class="board">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">a</th>
-                    <th scope="col">b</th>
-                    <th scope="col">c</th>
-                    <th scope="col">d</th>
-                    <th scope="col">e</th>
-                    <th scope="col">f</th>
-                    <th scope="col">g</th>
-                    <th scope="col">h</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>8</th>
-                    <td id="8a" class="square">@ViewBag.Square[63].ImgPiece</td>
-                    <td id="8b" class="squareDark">@ViewBag.Square[62].ImgPiece</td>
-                    <td id="8c" class="square">@ViewBag.Square[61].ImgPiece</td>
-                    <td id="8d" class="squareDark">@ViewBag.Square[60].ImgPiece</td>
-                    <td id="8e" class="square">@ViewBag.Square[59].ImgPiece</td>
-                    <td id="8f" class="squareDark">@ViewBag.Square[58].ImgPiece</td>
-                    <td id="8g" class="square">@ViewBag.Square[57].ImgPiece</td>
-                    <td id="8h" class="squareDark">@ViewBag.Square[56].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td id="7a" class="squareDark">@ViewBag.Square[55].ImgPiece</td>
-                    <td id="7b" class="square">@ViewBag.Square[54].ImgPiece</td>
-                    <td id="7c" class="squareDark">@ViewBag.Square[53].ImgPiece</td>
-                    <td id="7d" class="square">@ViewBag.Square[52].ImgPiece</td>
-                    <td id="7e" class="squareDark">@ViewBag.Square[51].ImgPiece</td>
-                    <td id="7f" class="square">@ViewBag.Square[50].ImgPiece</td>
-                    <td id="7g" class="squareDark">@ViewBag.Square[49].ImgPiece</td>
-                    <td id="7h" class="square">@ViewBag.Square[48].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td id="6a" class="square">@ViewBag.Square[47].ImgPiece</td>
-                    <td id="6b" class="squareDark">@ViewBag.Square[46].ImgPiece</td>
-                    <td id="6c" class="square">@ViewBag.Square[45].ImgPiece</td>
-                    <td id="6d" class="squareDark">@ViewBag.Square[44].ImgPiece</td>
-                    <td id="6e" class="square">@ViewBag.Square[43].ImgPiece</td>
-                    <td id="6f" class="squareDark">@ViewBag.Square[42].ImgPiece</td>
-                    <td id="6g" class="square">@ViewBag.Square[41].ImgPiece</td>
-                    <td id="6h" class="squareDark">@ViewBag.Square[40].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td id="5a" class="squareDark">@ViewBag.Square[39].ImgPiece</td>
-                    <td id="5b" class="square">@ViewBag.Square[38].ImgPiece</td>
-                    <td id="5c" class="squareDark">@ViewBag.Square[37].ImgPiece</td>
-                    <td id="5d" class="square">@ViewBag.Square[36].ImgPiece</td>
-                    <td id="5e" class="squareDark">@ViewBag.Square[35].ImgPiece</td>
-                    <td id="5f" class="square">@ViewBag.Square[34].ImgPiece</td>
-                    <td id="5g" class="squareDark">@ViewBag.Square[33].ImgPiece</td>
-                    <td id="5h" class="square">@ViewBag.Square[32].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td id="4a" class="square">@ViewBag.Square[31].ImgPiece</td>
-                    <td id="4b" class="squareDark">@ViewBag.Square[30].ImgPiece</td>
-                    <td id="4c" class="square">@ViewBag.Square[29].ImgPiece</td>
-                    <td id="4d" class="squareDark">@ViewBag.Square[28].ImgPiece</td>
-                    <td id="4e" class="square">@ViewBag.Square[27].ImgPiece</td>
-                    <td id="4f" class="squareDark">@ViewBag.Square[26].ImgPiece</td>
-                    <td id="4g" class="square">@ViewBag.Square[25].ImgPiece</td>
-                    <td id="4h" class="squareDark">@ViewBag.Square[24].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td id="3a" class="squareDark">@ViewBag.Square[23].ImgPiece</td>
-                    <td id="3b" class="square">@ViewBag.Square[22].ImgPiece</td>
-                    <td id="3c" class="squareDark">@ViewBag.Square[21].ImgPiece</td>
-                    <td id="3d" class="square">@ViewBag.Square[20].ImgPiece</td>
-                    <td id="3e" class="squareDark">@ViewBag.Square[19].ImgPiece</td>
-                    <td id="3f" class="square">@ViewBag.Square[18].ImgPiece</td>
-                    <td id="3g" class="squareDark">@ViewBag.Square[17].ImgPiece</td>
-                    <td id="3h" class="square">@ViewBag.Square[16].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td id="2a" class="square">@ViewBag.Square[15].ImgPiece</td>
-                    <td id="2b" class="squareDark">@ViewBag.Square[14].ImgPiece</td>
-                    <td id="2c" class="square">@ViewBag.Square[13].ImgPiece</td>
-                    <td id="2d" class="squareDark">@ViewBag.Square[12].ImgPiece</td>
-                    <td id="2e" class="square">@ViewBag.Square[11].ImgPiece</td>
-                    <td id="2f" class="squareDark">@ViewBag.Square[10].ImgPiece</td>
-                    <td id="2g" class="square">@ViewBag.Square[9].ImgPiece</td>
-                    <td id="2h" class="squareDark">@ViewBag.Square[8].ImgPiece</td>
-                </tr>
-                <tr>
-                    <th>1</th>
-                    <td id="1a" class="squareDark">@ViewBag.Square[7].ImgPiece</td>
-                    <td id="1b" class="square">@ViewBag.Square[6].ImgPiece</td>
-                    <td id="1c" class="squareDark">@ViewBag.Square[5].ImgPiece</td>
-                    <td id="1d" class="square">@ViewBag.Square[4].ImgPiece</td>
-                    <td id="1e" class="squareDark">@ViewBag.Square[3].ImgPiece</td>
-                    <td id="1f" class="square">@ViewBag.Square[2].ImgPiece</td>
-                    <td id="1g" class="squareDark">@ViewBag.Square[1].ImgPiece</td>
-                    <td id="1h" class="square">@ViewBag.Square[0].ImgPiece</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="board">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">a</th>
+                <th scope="col">b</th>
+                <th scope="col">c</th>
+                <th scope="col">d</th>
+                <th scope="col">e</th>
+                <th scope="col">f</th>
+                <th scope="col">g</th>
+                <th scope="col">h</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>8</th>
+                <td id="8a" class="square">@ViewBag.Square[63].ImgPiece</td>
+                <td id="8b" class="squareDark">@ViewBag.Square[62].ImgPiece</td>
+                <td id="8c" class="square">@ViewBag.Square[61].ImgPiece</td>
+                <td id="8d" class="squareDark">@ViewBag.Square[60].ImgPiece</td>
+                <td id="8e" class="square">@ViewBag.Square[59].ImgPiece</td>
+                <td id="8f" class="squareDark">@ViewBag.Square[58].ImgPiece</td>
+                <td id="8g" class="square">@ViewBag.Square[57].ImgPiece</td>
+                <td id="8h" class="squareDark">@ViewBag.Square[56].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td id="7a" class="squareDark">@ViewBag.Square[55].ImgPiece</td>
+                <td id="7b" class="square">@ViewBag.Square[54].ImgPiece</td>
+                <td id="7c" class="squareDark">@ViewBag.Square[53].ImgPiece</td>
+                <td id="7d" class="square">@ViewBag.Square[52].ImgPiece</td>
+                <td id="7e" class="squareDark">@ViewBag.Square[51].ImgPiece</td>
+                <td id="7f" class="square">@ViewBag.Square[50].ImgPiece</td>
+                <td id="7g" class="squareDark">@ViewBag.Square[49].ImgPiece</td>
+                <td id="7h" class="square">@ViewBag.Square[48].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td id="6a" class="square">@ViewBag.Square[47].ImgPiece</td>
+                <td id="6b" class="squareDark">@ViewBag.Square[46].ImgPiece</td>
+                <td id="6c" class="square">@ViewBag.Square[45].ImgPiece</td>
+                <td id="6d" class="squareDark">@ViewBag.Square[44].ImgPiece</td>
+                <td id="6e" class="square">@ViewBag.Square[43].ImgPiece</td>
+                <td id="6f" class="squareDark">@ViewBag.Square[42].ImgPiece</td>
+                <td id="6g" class="square">@ViewBag.Square[41].ImgPiece</td>
+                <td id="6h" class="squareDark">@ViewBag.Square[40].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td id="5a" class="squareDark">@ViewBag.Square[39].ImgPiece</td>
+                <td id="5b" class="square">@ViewBag.Square[38].ImgPiece</td>
+                <td id="5c" class="squareDark">@ViewBag.Square[37].ImgPiece</td>
+                <td id="5d" class="square">@ViewBag.Square[36].ImgPiece</td>
+                <td id="5e" class="squareDark">@ViewBag.Square[35].ImgPiece</td>
+                <td id="5f" class="square">@ViewBag.Square[34].ImgPiece</td>
+                <td id="5g" class="squareDark">@ViewBag.Square[33].ImgPiece</td>
+                <td id="5h" class="square">@ViewBag.Square[32].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td id="4a" class="square">@ViewBag.Square[31].ImgPiece</td>
+                <td id="4b" class="squareDark">@ViewBag.Square[30].ImgPiece</td>
+                <td id="4c" class="square">@ViewBag.Square[29].ImgPiece</td>
+                <td id="4d" class="squareDark">@ViewBag.Square[28].ImgPiece</td>
+                <td id="4e" class="square">@ViewBag.Square[27].ImgPiece</td>
+                <td id="4f" class="squareDark">@ViewBag.Square[26].ImgPiece</td>
+                <td id="4g" class="square">@ViewBag.Square[25].ImgPiece</td>
+                <td id="4h" class="squareDark">@ViewBag.Square[24].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td id="3a" class="squareDark">@ViewBag.Square[23].ImgPiece</td>
+                <td id="3b" class="square">@ViewBag.Square[22].ImgPiece</td>
+                <td id="3c" class="squareDark">@ViewBag.Square[21].ImgPiece</td>
+                <td id="3d" class="square">@ViewBag.Square[20].ImgPiece</td>
+                <td id="3e" class="squareDark">@ViewBag.Square[19].ImgPiece</td>
+                <td id="3f" class="square">@ViewBag.Square[18].ImgPiece</td>
+                <td id="3g" class="squareDark">@ViewBag.Square[17].ImgPiece</td>
+                <td id="3h" class="square">@ViewBag.Square[16].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td id="2a" class="square">@ViewBag.Square[15].ImgPiece</td>
+                <td id="2b" class="squareDark">@ViewBag.Square[14].ImgPiece</td>
+                <td id="2c" class="square">@ViewBag.Square[13].ImgPiece</td>
+                <td id="2d" class="squareDark">@ViewBag.Square[12].ImgPiece</td>
+                <td id="2e" class="square">@ViewBag.Square[11].ImgPiece</td>
+                <td id="2f" class="squareDark">@ViewBag.Square[10].ImgPiece</td>
+                <td id="2g" class="square">@ViewBag.Square[9].ImgPiece</td>
+                <td id="2h" class="squareDark">@ViewBag.Square[8].ImgPiece</td>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td id="1a" class="squareDark">@ViewBag.Square[7].ImgPiece</td>
+                <td id="1b" class="square">@ViewBag.Square[6].ImgPiece</td>
+                <td id="1c" class="squareDark">@ViewBag.Square[5].ImgPiece</td>
+                <td id="1d" class="square">@ViewBag.Square[4].ImgPiece</td>
+                <td id="1e" class="squareDark">@ViewBag.Square[3].ImgPiece</td>
+                <td id="1f" class="square">@ViewBag.Square[2].ImgPiece</td>
+                <td id="1g" class="squareDark">@ViewBag.Square[1].ImgPiece</td>
+                <td id="1h" class="square">@ViewBag.Square[0].ImgPiece</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-
-    @section scripts {
-        <script type="text/javascript">
+@section scripts {
+    <script>
         $(document).ready(function () {
+
+            var pieceSelected = "";
+            var positionInitial = "";
+            var positionSelected = "";
+            var pieceInPositionSeleted = "";
+            var row = []
+            row = ("a", "b", "c", "d", "e", "f", "g", "h");
 
             $("#pieceSelected").prop('disabled', true);
             $("#positionSelected").prop('disabled', true);
@@ -144,65 +150,34 @@
 
             if ('@TempData["mensaje"]' == "redirect") {
                 //$(".board .table tbody td").empty();
-
                 $("#pieceSelected").prop('disabled', false);
                 $("#positionSelected").prop('disabled', false);
-
-                //LoadPiece();
             }
 
             $("#pieceSelected").change(function () {
-                var varEntry = $("#pieceSelected").val();
-                var idSquare = ConvertIdAndValidate(varEntry);
-
-                Validate(varEntry);
+                var varEntryInitial = $("#pieceSelected").val();
+                var idSquareInitial = ConvertIdAndValidate(varEntryInitial);
+                var pieceSeletedInitial = $(idSquareInitial)[0].innerText; 
+                positionInitial = idSquareInitial;
+                pieceSelected = pieceSeletedInitial;
             });
 
             $("#positionSelected").change(function () {
-
                 var varEntry = $("#positionSelected").val();
-                //var idSquare = ConvertIdAndValidate(varEntry)
-                //Validate(varEntry);
-            });
-
-            function Validate(varEntry) {
-
-                var idSquare = ConvertId(varEntry);
-               
-                //busco en tabla
-                if (idSquare != null) {
+                var idSquare = ConvertIdAndValidate(varEntry);
+                pieceInPositionSeleted = $(idSquare)[0].innerText;
+                positionSelected = idSquare;
                 
-                    var square = idSquare;
-                    var squareVar = $(square).val();
-
-                    if (squareVar == null)
-                    {
-                        alert("Empty square");
-                        return;
-                    }
-                    else {
-
-                        switch (squareVar) {
-                            case "♟": alert(peon); //pawn black
-                            case "♙": alert(peon); //pawn white
-
-                            case "♞": alert(tower); //tower black
-                            case "♘": alert(tower); //tower white
-
-                            case "♝": alert(bishop); //bishop black
-                            case "♗": alert(bishop); //bishop white
-                        }
-                    }
-                }
-            }
+                ValidateMove(pieceSelected, positionInitial, positionSelected);
+            });
 
             function ConvertIdAndValidate(varEntry) {
 
                 var letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
                 var newArray = [];
-                var idSquare = Array.from(varEntry);
+                var idSquare = varEntry.split(""); //varEntry.toArray(); //Array.from(varEntry);
 
-                if (idSquare.length > 2 || idSquare.length < 2) {
+                if (idSquare.length != null && (idSquare.length > 2 || idSquare.length < 2)) {
                     alert("Insert row-column");
                     return;
                 }
@@ -213,20 +188,25 @@
                         return;
                     }
                     else {
-                        newArray.push("#");
-                        newArray.push(idSquare[0]);
-                        newArray.push(idSquare[1]);
+                        if (jQuery.inArray(idSquare[1], letters) === -1) {
+                            alert("Insert values ​​from a to h");
+                        } else {
+                            newArray.push("#");
+                            newArray.push(idSquare[0]);
+                            newArray.push(idSquare[1]);
 
-                        var newString = newArray.toString().replace(',', '');
+                            var newString = (newArray.toString()).replace(',', '');
+                            newString = newString.replace(',', '');
 
-                        var squareVar = $(newString).val();
-                        if (squareVar == null) {
-                            alert("Empty square");
-                            return;
+                            var squareVar = $(newString)[0].innerText; //$(newString).val();
+                            if (squareVar == null) {
+                                alert("Empty square");
+                                return;
+                            }
                         }
 
-                        return newString
-                    } 
+                        return newString;
+                    }
                 }
                 else {
                     if ($.isNumeric(idSquare[1])) {
@@ -235,27 +215,621 @@
                             return;
                         }
                         else {
-                            newArray.push("#");
-                            newArray.push(idSquare[1]);
-                            newArray.push(idSquare[0]);
+                            if (jQuery.inArray(idSquare[0], letters) === -1) {
+                                alert("Insert values ​​from a to h");
+                            } else {
+                                newArray.push("#");
+                                newArray.push(idSquare[1]);
+                                newArray.push(idSquare[0]);
 
-                            var newString = newArray.toString().replace(',', '');
+                                var newString = (newArray.toString()).replace(',', '');
+                                newString = newString.replace(',', '');
 
-                            var squareVar = $(newString).val();
-                            if (squareVar == null) {
-                                alert("Empty square");
-                                return;
+                                var squareVar = $(newString)[0].innerText; //$(newString).val();
+                                if (squareVar == null) {
+                                    alert("Empty square");
+                                    return;
+                                }
                             }
 
-                            return newString
-                        } 
+                            return newString;
+                        }
 
                     }
                 }
             }
 
+            function ValidateMove(pieceSelected, positionInitial, positionSelected) {
 
+                // what piece
+                var canPieceMove = findOutPiece(pieceSelected, positionInitial, positionSelected); // averiguo si es permitido el movimiento
+                var colorPieceToMove = "";
+                var colorPieceInNewPosition = "1";
 
-        });
-        </script>
-    }
+                alert("move canPieceMove " + canPieceMove);
+
+                if (!canPieceMove) {
+                    alert("It's not a valid move for this piece");
+                }
+                else {
+                    //si hay una pieza en la nueva posición
+                    if ($(positionSelected)[0].innerText != null || $(positionSelected)[0].innerText != "") {
+                        if (colorPieceInNewPosition == colorPieceToMove) {
+                            alert("You can 't eat pieces of the same color");
+                        }
+                        else {
+                            //coloco la pieza en la nueva posicion 
+                            $(positionInitial).empty();
+                            $(positionSelected).append(pieceSelected);
+                        }
+                    }
+                    else {
+                        // se procede a realizar el movimiento
+                        $(positionInitial).empty();
+                        $(positionSelected).append(pieceSelected);
+                    }
+                }
+                
+            }
+
+            function findOutPiece(pieceSelected, positionInitial, positionSelected) {
+
+                switch (pieceSelected) {
+                    case "♟": //pawn black
+                        //si es negro tiene que moverse en la misma columna de mayor a menor
+                        return getMovePawn(false, positionInitial, positionSelected);
+                        break;
+                    case "♙": //pawn white
+                        //si es blanco tiene que moverse en la misma columna de menor a mayor
+                        return getMovePawn(true, positionInitial, positionSelected);
+                        break;
+                    case "♜": //tower black
+                        return getMoveTower(positionInitial, positionSelected);
+                        break;
+                    case "♖": //tower white
+                        return getMoveTower(positionInitial, positionSelected);
+                        break;
+                    case "♝": //bishop black
+                        return getMoveBishop(positionInitial, positionSelected);
+                        break;
+                    case "♗": //bishop white
+                        return getMoveBishop(positionInitial, positionSelected);
+                        break;
+                    case "♞": //horse black
+                        return getMoveHorse(positionInitial, positionSelected);
+                        break;
+                    case "♘": //horse white
+                        return getMoveHorse(positionInitial, positionSelected);
+                        break;
+                    case "♛": //queen black
+                        return getMoveQueen(positionInitial, positionSelected);
+                        break;
+                    case "♕": //queen white
+                        return getMoveQueen(positionInitial, positionSelected);
+                        break;
+                    case "♚": //king black
+                        return getMoveKing(positionInitial, positionSelected);
+                        break;
+                    case "♔": //king white
+                        return getMoveKing(positionInitial, positionSelected);
+                        break;
+                }
+            }
+
+            // function move of piece
+            function getMovePawn(boolColor, positionInitial, positionSelected) {
+
+                blackPawnRowFirst = "7";
+                whitePawnRowFirst = "2";
+
+                arrayPositionInitial = positionInitial.split("");
+                arrayPositionSelected = positionSelected.split("");
+
+                //boolColor = true (white)
+                if (boolColor) {
+
+                    // si es misma columna puede moverse siempre y cuando sea de a una casilla
+                    var restWhite = parseInt(arrayPositionSelected[1]) - parseInt(arrayPositionInitial[1]);
+                    if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
+                        if (restWhite.toString() === "1") {
+                            return true;
+                        } else {
+                            return false; } 
+                    }
+                    else {
+                        var idx = row.indexOf(arrayPositionInitial[1]);
+                        var rowBefore = row[idx - 1];
+                        var rowAfter = row[idx + 1];
+
+                        //puede comer
+                        if (arrayPositionSelected[1] == rowBefore || arrayPositionInitial[1] == rowAfter) {
+                            return true;
+                        } else { return false; }
+                    }
+                }
+                else {
+                    // si es misma columna puede moverse siempre y cuando sea de una casilla
+                    var restBlack = parseInt(arrayPositionInitial[1]) - parseInt(arrayPositionSelected[1]);
+                    if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
+                        if (restBlack.toString() === "1") {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                    else {
+                        var idx = row.indexOf(arrayPositionInitial[1]);
+                        var rowBefore = row[idx - 1];
+                        var rowAfter = row[idx + 1];
+
+                        //puede comer
+                        if (arrayPositionInitial[1] == rowBefore || arrayPositionInitial[1] == rowAfter) {
+                            return true;
+                        } else { return false; }
+                    }
+                }
+            }
+
+            function getMoveTower(positionInitial, positionSelected) {
+
+                var arrayPositionInitial = positionInitial.split("");
+                var arrayPositionSelected = positionSelected.split("");
+                
+                if ((arrayPositionInitial[2] == arrayPositionSelected[2])
+                    || (arrayPositionInitial[1] == arrayPositionSelected[1]))
+                {
+                    //se mueve en la misma columna
+                    if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
+                        //se mueve hacia abajo
+                        if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                            var existPiecesDownUp = ExistPiecesTheWay(true, true, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesDownUp) { return false; }
+                            else { return true; }
+                            
+                        }
+
+                        //se mueve hacia arriba
+                        if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                            var existPiecesUpDown = ExistPiecesTheWay(true, false, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesUpDown) { return false; }
+                            else { return true; }
+                        }
+                    }
+
+                    //se mueve en la misma fila
+                    if (arrayPositionInitial[1] == arrayPositionSelected[1]) {
+                        // se mueve a derecha ->
+                        if (arrayPositionInitial[2] < arrayPositionSelected[2]) {
+                            var existPiecesR = ExistPiecesTheWay(false, true, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesR) { return false; }
+                            else { return true; }
+
+                        }
+
+                        // se mueve a izquierda <-
+                        if (arrayPositionInitial[2] > arrayPositionSelected[2]) {
+                            var existPiecesL = ExistPiecesTheWay(false, false, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesL) { return false; }
+                            else { return true; }
+                        }
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            function getMoveBishop(positionInitial, positionSelected) {
+
+                alert("bishop");
+
+                row = ("a", "b", "c", "d", "e", "f", "g", "h");
+
+                var arrayPositionInitial = positionInitial.split("");
+                var arrayPositionSelected = positionSelected.split("");
+                var idx = row.indexOf(arrayPositionInitial[2].toString());
+                var idxS = row.indexOf(arrayPositionSelected[2].toString());
+
+                alert("arrayPositionInitial[2] " + arrayPositionInitial[2].toString());
+                alert("idx " + idx);
+
+                alert("arrayPositionSelected[2] " + arrayPositionSelected[2].toString());
+                alert("idxS " + idxS);
+
+                if ((arrayPositionInitial[2] == arrayPositionSelected[2])
+                    || (arrayPositionInitial[1] == arrayPositionSelected[1])) {
+                    return false;
+                }
+                else
+                {
+                    //derecha 
+                    if (idx < idxS) { 
+                        // arriba 
+                        if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(true, true, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+
+                        // abajo 
+                        if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(true, false, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+                    }
+
+                    //izquierda  
+                    if (idx > idxS) { 
+                        // arriba 
+                        if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(false, true, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+
+                        // abajo 
+                        if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(false, false, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+                    }
+                }
+
+            }
+
+            function getMoveHorse(positionInitial, positionSelected) {
+
+                var arrayPositionInitial = positionInitial.split("");
+                var arrayPositionSelected = positionSelected.split("");
+                var idx = row.indexOf(arrayPositionInitial[2]);
+                var idxS = row.indexOf(arrayPositionSelected[2]);
+
+                var valueAbsC = Math.abs(arrayPositionInitial[1] - arrayPositionSelected[1]);
+                var valueAbsR = Math.abs(idxS - idx);
+
+                if ((valueAbsC != 2 && valueAbsR == 1)
+                    || (valueAbsC == 2 && valueAbsR != 1)
+                    || (valueAbsC != 1 && valueAbsR == 2)
+                    || (valueAbsC == 1 && valueAbsR != 2)) {
+                    return false;
+                }
+            }
+
+            function getMoveQueen(boolColor, positionInitial, positionSelected) {
+                arrayPositionInitial = positionInitial.split("");
+                arrayPositionSelected = positionSelected.split("");
+
+                var idx = row.indexOf(arrayPositionInitial[2]);
+                var idxS = row.indexOf(arrayPositionSelected[2]);
+
+                //se mueve en la misma columna
+                if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
+                    //se mueve hacia abajo
+                    if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                        var existPiecesDownUp = ExistPiecesTheWay(true, true, arrayPositionInitial, arrayPositionSelected);
+                        if (existPiecesDownUp) { return false; }
+                        else { return true; }
+
+                    }
+
+                    //se mueve hacia arriba
+                    if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                        var existPiecesUpDown = ExistPiecesTheWay(true, false, arrayPositionInitial, arrayPositionSelected);
+                        if (existPiecesUpDown) { return false; }
+                        else { return true; }
+                    }
+                }
+
+                //se mueve en la misma fila
+                if (arrayPositionInitial[1] == arrayPositionSelected[1]) {
+                    // se mueve a derecha ->
+                    if (arrayPositionInitial[2] < arrayPositionSelected[2]) {
+                        var existPiecesR = ExistPiecesTheWay(false, true, arrayPositionInitial, arrayPositionSelected);
+                        if (existPiecesR) { return false; }
+                        else { return true; }
+
+                    }
+
+                    // se mueve a izquierda <-
+                    if (arrayPositionInitial[2] > arrayPositionSelected[2]) {
+                        var existPiecesL = ExistPiecesTheWay(false, false, arrayPositionInitial, arrayPositionSelected);
+                        if (existPiecesL) { return false; }
+                        else { return true; }
+                    }
+                }
+
+                //Diagonal derecha
+                if (idx < idxS) {
+                    // arriba 
+                    if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                        var resultMov = ExistPiecesTheWayDiagonal(true, true, arrayPositionInitial, arrayPositionSelected);
+                        if (resultMov) { return false; }
+                        else { return true; }
+                    }
+
+                    // abajo 
+                    if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                        var resultMov = ExistPiecesTheWayDiagonal(true, false, arrayPositionInitial, arrayPositionSelected);
+                        if (resultMov) { return false; }
+                        else { return true; }
+                    }
+                }
+
+                //Diagonal izquierda  
+                if (idx < idxS) {
+                    // arriba 
+                    if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                        var resultMov = ExistPiecesTheWayDiagonal(false, true, arrayPositionInitial, arrayPositionSelected);
+                        if (resultMov) { return false; }
+                        else { return true; }
+                    }
+
+                    // abajo 
+                    if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                        var resultMov = ExistPiecesTheWayDiagonal(false, false, arrayPositionInitial, arrayPositionSelected);
+                        if (resultMov) { return false; }
+                        else { return true; }
+                    }
+                }
+            }
+
+            function getMoveKing(positionInitial, positionSelected) {
+
+                arrayPositionInitial = positionInitial.split("");
+                arrayPositionSelected = positionSelected.split("");
+
+                var idx = row.indexOf(arrayPositionInitial[2]);
+                var idxS = row.indexOf(arrayPositionSelected[2]);
+
+                var valueAbsC = Math.abs(arrayPositionInitial[1] - arrayPositionSelected[1]);
+                var valueAbsR = Math.abs(idxS - idx);
+
+                if ((valueAbsC == 0 || valueAbsC == 1) && valueAbsR == 1) {
+
+                    //se mueve en la misma columna
+                    if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
+                        //se mueve hacia abajo
+                        if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                            var existPiecesDownUp = ExistPiecesTheWay(true, true, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesDownUp) { return false; }
+                            else { return true; }
+
+                        }
+
+                        //se mueve hacia arriba
+                        if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                            var existPiecesUpDown = ExistPiecesTheWay(true, false, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesUpDown) { return false; }
+                            else { return true; }
+                        }
+                    }
+
+                    //se mueve en la misma fila
+                    if (arrayPositionInitial[1] == arrayPositionSelected[1]) {
+                        // se mueve a derecha ->
+                        if (arrayPositionInitial[2] < arrayPositionSelected[2]) {
+                            var existPiecesR = ExistPiecesTheWay(false, true, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesR) { return false; }
+                            else { return true; }
+
+                        }
+
+                        // se mueve a izquierda <-
+                        if (arrayPositionInitial[2] > arrayPositionSelected[2]) {
+                            var existPiecesL = ExistPiecesTheWay(false, false, arrayPositionInitial, arrayPositionSelected);
+                            if (existPiecesL) { return false; }
+                            else { return true; }
+                        }
+                    }
+                                        
+                    //Diagonal derecha
+                    if (idx < idxS) {
+                        // arriba 
+                        if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(true, true, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+
+                        // abajo 
+                        if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(true, false, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+                    }
+
+                    //Diagonal izquierda  
+                    if (idx < idxS) {
+                        // arriba 
+                        if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(false, true, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+
+                        // abajo 
+                        if (arrayPositionInitial[1] > arrayPositionSelected[1]) {
+                            var resultMov = ExistPiecesTheWayDiagonal(false, false, arrayPositionInitial, arrayPositionSelected);
+                            if (resultMov) { return false; }
+                            else { return true; }
+                        }
+                    }
+                    
+                }
+                else {
+                    return false;
+                }
+            }
+
+            //lineal 
+            function ExistPiecesTheWay(boolWay, boolWayTow, arrayPositionInitial, arrayPositionSelected)
+            {
+                var i = arrayPositionInitial[1];
+
+                //boolWay: si es columna true
+                //boolWayTow: para abajo true
+                if (boolWay && boolWayTow) {
+                    i--;
+                    for (i; i >= arrayPositionSelected[1]; i--) {
+                        var id = "#" + i + arrayPositionSelected[2];
+                        if ($(id)[0].innerText != "") {
+                            return true;
+                            break;
+                        }
+                    }
+                    return false;
+                }
+
+                //boolWay: si es columna true
+                //boolWayTow: para arriba false
+                if (boolWay && boolWayTow == false) {
+                    i++;
+                    for (i; i <= arrayPositionSelected[1]; i++) {
+                        var id = "#" + i + arrayPositionSelected[2];
+                        if ($(id)[0].innerText != "") {
+                            return true;
+                            break;
+                        }
+                    }
+                    return false;
+                }
+
+                //boolWay: si es fila = false
+                //boolWayTow: para derecha true ->
+                if (boolWay == false && boolWayTow) {
+
+                    var idx = row.indexOf(arrayPositionInitial[2]);
+                    var idxS = row.indexOf(arrayPositionSelected[2]);
+
+                    idx++;
+
+                    for (i = idx; i <= idxS; i++) {
+                        var id = "#" + i + arrayPositionSelected[2];
+                        if ($(id)[0].innerText != "") {
+                            return true;
+                            break;
+                        }
+                    }
+                    return false;
+                }
+
+                //boolWay: si es fila = false
+                //boolWayTow: para izquierda false <-
+                if (boolWay == false && boolWayTow == false) {
+
+                    var idx = row.indexOf(arrayPositionInitial[2]);
+                    var idxS = row.indexOf(arrayPositionSelected[2]);
+
+                    idx--;
+
+                    for (i = idx; i >= idxS; i--) {
+                        var id = "#" + i + arrayPositionSelected[2];
+                        if ($(id)[0].innerText == "") {
+                            return true;
+                            break;
+                        }
+                    }
+                    return false;
+                }
+
+        }
+
+            //diagonal 
+            function ExistPiecesTheWayDiagonal(boolWay, boolWayTow, arrayPositionInitial, arrayPositionSelected)
+            {
+
+                var i = arrayPositionInitial[1];
+                var idx = row.indexOf(arrayPositionInitial[2]);
+                var idxS = row.indexOf(arrayPositionSelected[2]);
+
+                alert("DIAGONAL");
+                //boolWay: si es derecha true
+                //boolWayTow: para arriba true
+                if (boolWay && boolWayTow) {
+                    i++;
+                    idx++;
+
+                    for (i; i <= arrayPositionSelected[1]; i++) {
+                        for (idx; idx <= idxS[1]; idx++) {
+
+                            alert("id: " + id);
+
+                            var id = "#" + i + row[idx];
+                            if ($(id)[0].innerText != "") {
+                                return true;
+                                break;
+                            }
+                        }
+                    }
+                    return false;
+                }
+
+                //boolWay: si es derecha true
+                //boolWayTow: para abajo false
+                if (boolWay && boolWayTow == false) {
+                    i--;
+                    idx++;
+
+                    for (i; i >= arrayPositionSelected[1]; i--) {
+                        for (idx; idx <= idxS[1]; idx++) {
+                            var id = "#" + i + row[idx];
+
+                            alert("id: " + id);
+
+                            if ($(id)[0].innerText != "") {
+                                return true;
+                                break;
+                            }
+                        }
+                    }
+                    return false;
+                }
+
+                //boolWay: si es izquierda false
+                //boolWayTow: para arriba true
+                if (boolWay == false && boolWayTow) {
+                    i++;
+                    idx--;
+
+                    for (i; i <= arrayPositionSelected[1]; i++) {
+                        for (idx; idx >= idxS[1]; idx--) {
+                            var id = "#" + i + row[idx];
+
+                            alert("id: " + id);
+
+                            if ($(id)[0].innerText != "") {
+                                return true;
+                                break;
+                            }
+                        }
+                    }
+                    return false;
+                }
+
+                //boolWay: si es izquierda false
+                //boolWayTow: para abajo false
+                if (boolWay == false && boolWayTow) {
+                    i--;
+                    idx--;
+
+                    for (i; i >= arrayPositionSelected[1]; i--) {
+                        for (idx; idx >= idxS[1]; idx--) {
+                            var id = "#" + i + row[idx];
+
+                            alert("id: " + id);
+
+                            if ($(id)[0].innerText != "") {
+                                return true;
+                                break;
+                            }
+                        }
+                    }
+                    return false;
+                }
+            }
+
+});
+    </script>
+}

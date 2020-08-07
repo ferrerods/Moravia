@@ -15,7 +15,7 @@ namespace ChessProject.Controllers
         private Board newBoard = new BoardsController().Create();
         Chess newChess = new Chess();
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
             newChess = Create();
             ViewBag.Square = newChess.Board.Squares;
@@ -23,7 +23,7 @@ namespace ChessProject.Controllers
             return View();
         }
 
-        public IActionResult NewGame() {
+        public ActionResult NewGame() {
 
             newChess = Create();
             newChess.Board = new BoardsController().Inicializate(newBoard);
@@ -33,7 +33,7 @@ namespace ChessProject.Controllers
             return RedirectToAction("Index"); 
         }
 
-        public IActionResult SaveMove() {
+        public ActionResult SaveMove() {
             TempData["mensaje"] = "redirect";
             return RedirectToAction("Index");
         }
@@ -46,7 +46,6 @@ namespace ChessProject.Controllers
 
             return newChess;
         }
-
 
     }
 }
