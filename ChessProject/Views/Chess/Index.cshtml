@@ -240,8 +240,8 @@
 
                 // what piece
                 var canPieceMove = findOutPiece(pieceSelected, positionInitial, positionSelected); // averiguo si es permitido el movimiento
-                var colorPieceToMove = PieceColor(pieceSelected);
-                var colorPieceInNewPosition = PieceColor($(positionSelected)[0].innerText);
+
+                alert("canPieceMove " + canPieceMove);
 
                 if (!canPieceMove) {
                     alert("It's not a valid move for this piece");
@@ -249,6 +249,12 @@
                 else {
                     //si hay una pieza en la nueva posición
                     if ($(positionSelected)[0].innerText != "") {
+                        var colorPieceToMove = PieceColor(pieceSelected);
+                        var colorPieceInNewPosition = PieceColor($(positionSelected)[0].innerText);
+
+                        alert("colorPieceToMove " + colorPieceToMove);
+                        alert("colorPieceInNewPosition " + colorPieceInNewPosition);
+
                         if (colorPieceInNewPosition == colorPieceToMove) {
                             alert("You can 't eat pieces of the same color");
                         }
@@ -596,13 +602,7 @@
                     //se mueve en la misma fila
                     if (arrayPositionInitial[1] == arrayPositionSelected[1]) {
                         // se mueve a derecha ->
-                        alert("idx " + idx);
-                        alert("idxS " + idxS);
-
                         if (idx < idxS) {
-
-                            alert("derecha ");
-
                             var existPiecesR = ExistPiecesTheWay(false, true, arrayPositionInitial, arrayPositionSelected);
                             if (existPiecesR) { return false; }
                             else { return true; }
@@ -611,9 +611,6 @@
 
                         // se mueve a izquierda <-
                         if (idx > idxS) {
-
-                            alert("izquierda ");
-
                             var existPiecesL = ExistPiecesTheWay(false, false, arrayPositionInitial, arrayPositionSelected);
                             if (existPiecesL) { return false; }
                             else { return true; }
@@ -664,7 +661,6 @@
             function ExistPiecesTheWay(boolWay, boolWayTow, arrayPositionInitial, arrayPositionSelected)
             {
                 var i = arrayPositionInitial[1];
-                var colorPieceSeleted = PieceColor(pieceSelected);
 
                 //boolWay: si es columna true
                 //boolWayTow: para abajo true
@@ -672,10 +668,16 @@
                     i--;
                     for (i; i >= arrayPositionSelected[1]; i--) {
                         var id = "#" + i + arrayPositionSelected[2];
-                        if ($(id)[0].innerText != "") {
+                        if ($(id)[0].innerText != "" && i != arrayPositionSelected[1]) {
                             return true;
                             break;
                         }
+
+                        if ($(id)[0].innerText != "" && i == arrayPositionSelected[1]) {
+                            return false;
+                            break;
+                        }
+
                     }
                     return false;
                 }
@@ -686,10 +688,16 @@
                     i++;
                     for (i; i <= arrayPositionSelected[1]; i++) {
                         var id = "#" + i + arrayPositionSelected[2];
-                        if ($(id)[0].innerText != "") {
+                        if ($(id)[0].innerText != "" && i != arrayPositionSelected[1]) {
                             return true;
                             break;
                         }
+
+                        if ($(id)[0].innerText != "" && i == arrayPositionSelected[1]) {
+                            return false;
+                            break;
+                        }
+
                     }
                     return false;
                 }
@@ -697,18 +705,21 @@
                 //boolWay: si es fila = false
                 //boolWayTow: para derecha true ->
                 if (boolWay == false && boolWayTow) {
-
                     var idx = FindPosition(row, arrayPositionInitial[2]);
                     var idxS = FindPosition(row, arrayPositionSelected[2]);
-
                     idx++;
-
                     for (t = idx; t <= idxS; t++) {
                         var id = "#" + i + arrayPositionSelected[2];
                         if ($(id)[0].innerText != "") {
                             return true;
                             break;
                         }
+
+                        if ($(id)[0].innerText != "" && t == idxS) {
+                            return false;
+                            break;
+                        }
+
                     }
                     return false;
                 }
@@ -716,18 +727,20 @@
                 //boolWay: si es fila = false
                 //boolWayTow: para izquierda false <-
                 if (boolWay == false && boolWayTow == false) {
-
                     var idx = FindPosition(row, arrayPositionInitial[2]);
                     var idxS = FindPosition(row, arrayPositionSelected[2]);
-
                     idx--;
-
                     for (t = idx; t > idxS; t--) {
                         var id = "#" + i + arrayPositionSelected[2];
-                        if ($(id)[0].innerText == "") {
+                        if ($(id)[0].innerText != "") {
                             return true;
                             break;
-                        }                    
+                        }
+
+                        if ($(id)[0].innerText != "" && t == idxS) {
+                            return false;
+                            break;
+                        }
                     }
                     return false;
                 }
