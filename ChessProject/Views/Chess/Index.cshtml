@@ -241,8 +241,6 @@
                 // what piece
                 var canPieceMove = findOutPiece(pieceSelected, positionInitial, positionSelected); // averiguo si es permitido el movimiento
 
-                alert("canPieceMove " + canPieceMove);
-
                 if (!canPieceMove) {
                     alert("It's not a valid move for this piece");
                 }
@@ -251,9 +249,6 @@
                     if ($(positionSelected)[0].innerText != "") {
                         var colorPieceToMove = PieceColor(pieceSelected);
                         var colorPieceInNewPosition = PieceColor($(positionSelected)[0].innerText);
-
-                        alert("colorPieceToMove " + colorPieceToMove);
-                        alert("colorPieceInNewPosition " + colorPieceInNewPosition);
 
                         if (colorPieceInNewPosition == colorPieceToMove) {
                             alert("You can 't eat pieces of the same color");
@@ -710,7 +705,8 @@
                     idx++;
                     for (t = idx; t <= idxS; t++) {
                         var id = "#" + i + arrayPositionSelected[2];
-                        if ($(id)[0].innerText != "") {
+
+                        if ($(id)[0].innerText != "" && t != idxS) {
                             return true;
                             break;
                         }
@@ -732,7 +728,7 @@
                     idx--;
                     for (t = idx; t > idxS; t--) {
                         var id = "#" + i + arrayPositionSelected[2];
-                        if ($(id)[0].innerText != "") {
+                        if ($(id)[0].innerText != "" && t != idxS) {
                             return true;
                             break;
                         }
