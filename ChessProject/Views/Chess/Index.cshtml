@@ -240,27 +240,29 @@
 
                 // what piece
                 var canPieceMove = findOutPiece(pieceSelected, positionInitial, positionSelected); // averiguo si es permitido el movimiento
-                var colorPieceToMove = "";
-                var colorPieceInNewPosition = "1";
+                var colorPieceToMove = PieceColor(pieceSelected);
+                var colorPieceInNewPosition = PieceColor($(positionSelected)[0].innerText);
 
                 if (!canPieceMove) {
                     alert("It's not a valid move for this piece");
                 }
                 else {
                     //si hay una pieza en la nueva posición
-                    if ($(positionSelected)[0].innerText != null || $(positionSelected)[0].innerText != "") {
+                    if ($(positionSelected)[0].innerText != "") {
                         if (colorPieceInNewPosition == colorPieceToMove) {
                             alert("You can 't eat pieces of the same color");
                         }
                         else {
                             //coloco la pieza en la nueva posicion 
                             $(positionInitial).empty();
+                            $(positionSelected).empty();
                             $(positionSelected).append(pieceSelected);
                         }
                     }
                     else {
                         // se procede a realizar el movimiento
                         $(positionInitial).empty();
+                        $(positionSelected).empty();
                         $(positionSelected).append(pieceSelected);
                     }
                 }
@@ -481,10 +483,10 @@
                 }
             }
 
-            function getMoveQueen(boolColor, positionInitial, positionSelected) {
-                arrayPositionInitial = positionInitial.split("");
-                arrayPositionSelected = positionSelected.split("");
+            function getMoveQueen(positionInitial, positionSelected) {
 
+                var arrayPositionInitial = positionInitial.split("");
+                var arrayPositionSelected = positionSelected.split("");
                 var idx = FindPosition(row, arrayPositionInitial[2]);
                 var idxS = FindPosition(row, arrayPositionSelected[2]);
 
@@ -542,7 +544,7 @@
                 }
 
                 //Diagonal izquierda  
-                if (idx < idxS) {
+                if (idx > idxS) {
                     // arriba 
                     if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
                         var resultMov = ExistPiecesTheWayDiagonal(false, true, arrayPositionInitial, arrayPositionSelected);
@@ -570,7 +572,8 @@
                 var valueAbsR = Math.abs(idxS - idx);
 
                 if ((valueAbsC == 0 && valueAbsR == 1)
-                    || (valueAbsC == 1 && valueAbsR == 0)) {
+                    || (valueAbsC == 1 && valueAbsR == 0)
+                    || (valueAbsC == 1 && valueAbsR == 1)) {
 
                     //se mueve en la misma columna
                     if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
@@ -593,7 +596,13 @@
                     //se mueve en la misma fila
                     if (arrayPositionInitial[1] == arrayPositionSelected[1]) {
                         // se mueve a derecha ->
+                        alert("idx " + idx);
+                        alert("idxS " + idxS);
+
                         if (idx < idxS) {
+
+                            alert("derecha ");
+
                             var existPiecesR = ExistPiecesTheWay(false, true, arrayPositionInitial, arrayPositionSelected);
                             if (existPiecesR) { return false; }
                             else { return true; }
@@ -602,6 +611,9 @@
 
                         // se mueve a izquierda <-
                         if (idx > idxS) {
+
+                            alert("izquierda ");
+
                             var existPiecesL = ExistPiecesTheWay(false, false, arrayPositionInitial, arrayPositionSelected);
                             if (existPiecesL) { return false; }
                             else { return true; }
@@ -626,7 +638,7 @@
                     }
 
                     //Diagonal izquierda  
-                    if (idx < idxS) {
+                    if (idx > idxS) {
                         // arriba 
                         if (arrayPositionInitial[1] < arrayPositionSelected[1]) {
                             var resultMov = ExistPiecesTheWayDiagonal(false, true, arrayPositionInitial, arrayPositionSelected);
@@ -652,6 +664,7 @@
             function ExistPiecesTheWay(boolWay, boolWayTow, arrayPositionInitial, arrayPositionSelected)
             {
                 var i = arrayPositionInitial[1];
+                var colorPieceSeleted = PieceColor(pieceSelected);
 
                 //boolWay: si es columna true
                 //boolWayTow: para abajo true
@@ -690,7 +703,7 @@
 
                     idx++;
 
-                    for (i = idx; i <= idxS; i++) {
+                    for (t = idx; t <= idxS; t++) {
                         var id = "#" + i + arrayPositionSelected[2];
                         if ($(id)[0].innerText != "") {
                             return true;
@@ -709,12 +722,12 @@
 
                     idx--;
 
-                    for (i = idx; i >= idxS; i--) {
+                    for (t = idx; t > idxS; t--) {
                         var id = "#" + i + arrayPositionSelected[2];
                         if ($(id)[0].innerText == "") {
                             return true;
                             break;
-                        }
+                        }                    
                     }
                     return false;
                 }
@@ -814,6 +827,20 @@
                 }
 
                 return "-1";
+            }
+
+            function PieceColor(newPiece) {
+                //piece white
+                if (newPiece == "♙"
+                    || newPiece == "♖"
+                    || newPiece == "♗"
+                    || newPiece == "♘"
+                    || newPiece == "♕"
+                    || newPiece == "♔") {
+                    return true;
+                } else {
+                    return false;
+                }
             }
 
         });

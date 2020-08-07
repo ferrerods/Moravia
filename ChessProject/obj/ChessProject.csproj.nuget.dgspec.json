@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj": {}
+    "C:\\Users\\Chano\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj": {
+    "C:\\Users\\Chano\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
+        "projectUniqueName": "C:\\Users\\Chano\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
         "projectName": "ChessProject",
-        "projectPath": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
-        "packagesPath": "C:\\Users\\Dalila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dalila\\source\\repos\\Moravia\\ChessProject\\obj\\",
+        "projectPath": "C:\\Users\\Chano\\source\\repos\\Moravia\\ChessProject\\ChessProject.csproj",
+        "packagesPath": "C:\\Users\\Chano\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Chano\\source\\repos\\Moravia\\ChessProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dalila\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Chano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -90,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
