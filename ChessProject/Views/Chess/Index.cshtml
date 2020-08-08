@@ -477,10 +477,12 @@
                 var valueAbsC = Math.abs(arrayPositionInitial[1] - arrayPositionSelected[1]);
                 var valueAbsR = Math.abs(idxS - idx);
 
-                if ((valueAbsC != 2 && valueAbsR == 1)
-                    || (valueAbsC == 2 && valueAbsR != 1)
-                    || (valueAbsC != 1 && valueAbsR == 2)
-                    || (valueAbsC == 1 && valueAbsR != 2)) {
+                if ((valueAbsC == 2 && valueAbsR == 1)
+                    || (valueAbsC == 1 && valueAbsR == 2)) {
+                    return true;
+                }
+                else
+                {
                     return false;
                 }
             }
