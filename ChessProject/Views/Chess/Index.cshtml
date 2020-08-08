@@ -242,7 +242,7 @@
                 var canPieceMove = findOutPiece(pieceSelected, positionInitial, positionSelected); // averiguo si es permitido el movimiento
 
                 if (!canPieceMove) {
-                    alert("It's not a valid move for this piece");
+                    alert("It's not a valid move");
                 }
                 else {
                     //si hay una pieza en la nueva posición
@@ -320,8 +320,8 @@
                 blackPawnRowFirst = "7";
                 whitePawnRowFirst = "2";
 
-                arrayPositionInitial = positionInitial.split("");
-                arrayPositionSelected = positionSelected.split("");
+                var arrayPositionInitial = positionInitial.split("");
+                var arrayPositionSelected = positionSelected.split("");
 
                 //boolColor = true (white)
                 if (boolColor) {
@@ -329,39 +329,40 @@
                     // si es misma columna puede moverse siempre y cuando sea de a una casilla
                     var restWhite = parseInt(arrayPositionSelected[1]) - parseInt(arrayPositionInitial[1]);
                     if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
-                        if (restWhite.toString() === "1") {
-                            return true;
+                        if (restWhite.toString() === "1" && $(positionSelected)[0].innerText == "") {
+                            return true ;
                         } else {
                             return false; } 
                     }
                     else {
-                        var idx = FindPosition(row, arrayPositionInitial[1]);
+                        var idx = FindPosition(row, arrayPositionInitial[2]);
                         var rowBefore = row[idx - 1];
                         var rowAfter = row[idx + 1];
 
                         //puede comer
-                        if (arrayPositionSelected[1] == rowBefore || arrayPositionInitial[1] == rowAfter) {
+                        if (arrayPositionSelected[2] == rowBefore || arrayPositionSelected[2] == rowAfter) {
                             return true;
                         } else { return false; }
                     }
                 }
                 else {
+                    //color : negro
                     // si es misma columna puede moverse siempre y cuando sea de una casilla
                     var restBlack = parseInt(arrayPositionInitial[1]) - parseInt(arrayPositionSelected[1]);
                     if (arrayPositionInitial[2] == arrayPositionSelected[2]) {
-                        if (restBlack.toString() === "1") {
+                        if (restBlack.toString() === "1" && $(positionSelected)[0].innerText == "") {
                             return true;
                         } else {
                             return false;
                         }
                     }
                     else {
-                        var idx = FindPosition(row, arrayPositionInitial[1]);
+                        var idx = FindPosition(row, arrayPositionInitial[2]);
                         var rowBefore = row[idx - 1];
                         var rowAfter = row[idx + 1];
 
                         //puede comer
-                        if (arrayPositionInitial[1] == rowBefore || arrayPositionInitial[1] == rowAfter) {
+                        if (arrayPositionSelected[2] == rowBefore || arrayPositionSelected[2] == rowAfter) {
                             return true;
                         } else { return false; }
                     }
@@ -703,9 +704,9 @@
                     var idx = FindPosition(row, arrayPositionInitial[2]);
                     var idxS = FindPosition(row, arrayPositionSelected[2]);
                     idx++;
-                    for (t = idx; t <= idxS; t++) {
-                        var id = "#" + i + arrayPositionSelected[2];
 
+                    for (t = idx; t <= idxS; t++) {
+                        var id = "#" + i + row[t];
                         if ($(id)[0].innerText != "" && t != idxS) {
                             return true;
                             break;
@@ -726,8 +727,8 @@
                     var idx = FindPosition(row, arrayPositionInitial[2]);
                     var idxS = FindPosition(row, arrayPositionSelected[2]);
                     idx--;
-                    for (t = idx; t > idxS; t--) {
-                        var id = "#" + i + arrayPositionSelected[2];
+                    for (t = idx; t >= idxS; t--) {
+                        var id = "#" + i + row[t];
                         if ($(id)[0].innerText != "" && t != idxS) {
                             return true;
                             break;
